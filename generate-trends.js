@@ -145,8 +145,9 @@ function buildHtml(trends) {
         <!-- Header -->
         <tr>
           <td style="background:linear-gradient(135deg,#4f46e5 0%,#7c3aed 100%);border-radius:12px 12px 0 0;padding:36px 40px 32px;">
-            <p style="margin:0 0 6px;color:rgba(255,255,255,0.65);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;">Daily Trends Digest</p>
+            <p style="margin:0 0 6px;color:rgba(255,255,255,0.65);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;">Christopher Teves</p>
             <h1 style="margin:0 0 8px;color:#ffffff;font-size:30px;font-weight:800;line-height:1.1;">Design & Tech Radar</h1>
+            <p style="margin:4px 0 0;color:rgba(255,255,255,0.55);font-size:13px;font-weight:400;">Your daily briefing on UX, Product & AI trends</p>
             <p style="margin:0;color:rgba(255,255,255,0.75);font-size:14px;">${today}</p>
           </td>
         </tr>
@@ -199,7 +200,7 @@ async function sendEmail(htmlContent, trends) {
     {
       from: FROM_EMAIL,
       to: TO_EMAIL,
-      subject: `Design & Tech Radar — ${today}`,
+      subject: `Christopher Teves · Design & Tech Radar — ${today}`,
       html: htmlContent,
       text: plainText,
     }
