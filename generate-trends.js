@@ -25,11 +25,8 @@ function post(hostname, path, headers, body) {
         let raw = "";
         res.on("data", (chunk) => (raw += chunk));
         res.on("end", () => {
-          try {
-            resolve(JSON.parse(raw));
-          } catch {
-            resolve(raw);
-          }
+          try { resolve(JSON.parse(raw)); }
+          catch { resolve(raw); }
         });
       }
     );
@@ -42,10 +39,7 @@ function post(hostname, path, headers, body) {
 // ─── Step 1: Call Claude with web search ──────────────────────────────────────
 async function fetchTrends() {
   const today = new Date().toLocaleDateString("en-GB", {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
+    weekday: "long", year: "numeric", month: "long", day: "numeric",
   });
 
   const prompt = `Today is ${today}.
@@ -56,19 +50,27 @@ You are a senior design and technology researcher. Search the web and find the 5
 - AI & new technology
 - Design tools (especially Figma and similar)
 
-For each trend, write a full, engaging write-up in this exact structure:
+Respond using EXACTLY this format for each trend, with no extra symbols, asterisks, or hashtags:
 
-TREND: [Trend Title]
-CATEGORY: [UX/UI Design | Product Design | AI & Tech | Design Tools]
-WHY IT MATTERS: 2-3 sentences explaining the significance for designers and product teams.
-WHAT IS HAPPENING: A full paragraph with the key details, context, and what changed or was announced.
-READ MORE: [Source name] [URL]
-END
+---TREND---
+TITLE: Write the trend title here
+CATEGORY: UX/UI Design
+WHY_IT_MATTERS: Write 2-3 sentences here explaining significance for designers and product teams.
+WHATS_HAPPENING: Write a full paragraph here with all the key details, context, and what changed or was announced.
+SOURCE_NAME: Name of the publication or website
+SOURCE_URL: https://full-url-here.com
+---END---
 
-After all 5 trends, add:
-SIGNAL: One sentence summarising the overarching theme you see across today's trends.
+Repeat this block 5 times, once per trend.
 
-Use exactly these labels (TREND, CATEGORY, WHY IT MATTERS, WHAT IS HAPPENING, READ MORE, END, SIGNAL) so the email formats correctly. Do not use markdown symbols like # or **.`;
+Then at the very end write:
+SIGNAL: One sentence summarising the overarching theme across today's trends.
+
+Important rules:
+- CATEGORY must be one of: UX/UI Design, Product Design, AI & Tech, Design Tools
+- Do not use any markdown, asterisks, hashtags, or bullet points anywhere
+- Fill in ALL fields completely, especially WHATS_HAPPENING — never leave it short
+- SOURCE_URL must be a full working URL starting with https://`;
 
   const response = await post(
     "api.anthropic.com",
@@ -90,73 +92,87 @@ Use exactly these labels (TREND, CATEGORY, WHY IT MATTERS, WHAT IS HAPPENING, RE
   return textBlock.text;
 }
 
-// ─── Step 2: Parse structured text into HTML ──────────────────────────────────
+// ─── Step 2: Parse into HTML ───────────────────────────────────────────────────
 function parseToHtml(text) {
   const today = new Date().toLocaleDateString("en-GB", {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
+    weekday: "long", year: "numeric", month: "long", day: "numeric",
   });
 
-  const blocks = text.split(/(?=TREND:)/g).filter(b => b.trim());
+  // Extract trend blocks
+  const trendBlocks = [...text.matchAll(/---TREND---([\s\S]*?)---END---/g)];
+
+  // Extract signal
   const signalMatch = text.match(/SIGNAL:\s*(.+)/);
   const signal = signalMatch ? signalMatch[1].trim() : "";
 
+  const categoryColors = {
+    "UX/UI Design": "#4f46e5",
+    "Product Design": "#7c3aed",
+    "AI & Tech": "#0891b2",
+    "Design Tools": "#059669",
+  };
+
+  const getField = (block, field) => {
+    const match = block.match(new RegExp(`${field}:\\s*([\\s\\S]*?)(?=\\n[A-Z_]+:|$)`));
+    return match ? match[1].trim() : "";
+  };
+
   let trendsHtml = "";
 
-  blocks.forEach((block, index) => {
-    if (!block.startsWith("TREND:")) return;
+  trendBlocks.forEach((match, index) => {
+    const block = match[1];
+    const title = getField(block, "TITLE");
+    const category = getField(block, "CATEGORY");
+    const whyItMatters = getField(block, "WHY_IT_MATTERS");
+    const whatsHappening = getField(block, "WHATS_HAPPENING");
+    const sourceName = getField(block, "SOURCE_NAME");
+    const sourceUrl = getField(block, "SOURCE_URL");
 
-    const getValue = (label) => {
-      const regex = new RegExp(`${label}:\\s*([\\s\\S]*?)(?=\\n[A-Z ]+:|END|$)`);
-      const match = block.match(regex);
-      return match ? match[1].trim() : "";
-    };
-
-    const title = getValue("TREND");
-    const category = getValue("CATEGORY");
-    const whyItMatters = getValue("WHY IT MATTERS");
-    const whatIsHappening = getValue("WHAT IS HAPPENING");
-    const readMoreRaw = getValue("READ MORE");
-
-    const urlMatch = readMoreRaw.match(/(https?:\/\/\S+)/);
-    const url = urlMatch ? urlMatch[1] : "#";
-    const sourceName = readMoreRaw.replace(url, "").trim() || "Read more";
-
-    const categoryColors = {
-      "UX/UI Design": "#4f46e5",
-      "Product Design": "#7c3aed",
-      "AI & Tech": "#0891b2",
-      "Design Tools": "#059669",
-    };
     const tagColor = categoryColors[category] || "#4f46e5";
 
     trendsHtml += `
-      <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:32px;">
-        <tr>
-          <td style="background:#f8f7ff;border-left:4px solid ${tagColor};border-radius:0 8px 8px 0;padding:24px 28px;">
-            <p style="margin:0 0 10px;"><span style="background:${tagColor};color:#fff;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;padding:3px 10px;border-radius:20px;">${category}</span></p>
-            <h2 style="margin:0 0 16px;color:#1a1a1a;font-size:20px;font-weight:700;line-height:1.3;">${index}. ${title}</h2>
-            <p style="margin:0 0 6px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#6b7280;">Why it matters</p>
-            <p style="margin:0 0 16px;color:#374151;font-size:15px;line-height:1.7;">${whyItMatters}</p>
-            <p style="margin:0 0 6px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#6b7280;">What's happening</p>
-            <p style="margin:0 0 20px;color:#374151;font-size:15px;line-height:1.7;">${whatIsHappening}</p>
-            <a href="${url}" style="display:inline-block;background:#1a1a1a;color:#ffffff;font-size:13px;font-weight:600;text-decoration:none;padding:8px 18px;border-radius:6px;">Read more at ${sourceName}</a>
-          </td>
-        </tr>
-      </table>`;
+      <tr>
+        <td style="padding:0 0 28px 0;">
+          <table width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td style="background:#ffffff;border:1px solid #e5e7eb;border-left:4px solid ${tagColor};border-radius:8px;padding:24px 28px;">
+
+                <p style="margin:0 0 12px 0;">
+                  <span style="background:${tagColor};color:#ffffff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:3px 10px;border-radius:20px;">${category}</span>
+                </p>
+
+                <h2 style="margin:0 0 18px 0;color:#111827;font-size:19px;font-weight:700;line-height:1.4;">${index + 1}. ${title}</h2>
+
+                <p style="margin:0 0 4px 0;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#9ca3af;">Why it matters</p>
+                <p style="margin:0 0 18px 0;color:#374151;font-size:15px;line-height:1.75;">${whyItMatters}</p>
+
+                <p style="margin:0 0 4px 0;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#9ca3af;">What's happening</p>
+                <p style="margin:0 0 18px 0;color:#374151;font-size:15px;line-height:1.75;">${whatsHappening}</p>
+
+                <p style="margin:0;font-size:13px;color:#6b7280;">
+                  Source: <a href="${sourceUrl}" style="color:${tagColor};text-decoration:underline;">${sourceName}</a>
+                </p>
+
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>`;
   });
 
   const signalHtml = signal ? `
-    <table width="100%" cellpadding="0" cellspacing="0" style="margin-top:8px;">
       <tr>
-        <td style="background:linear-gradient(135deg,#4f46e5 0%,#7c3aed 100%);border-radius:10px;padding:24px 28px;">
-          <p style="margin:0 0 6px;color:rgba(255,255,255,0.7);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;">This week's signal</p>
-          <p style="margin:0;color:#ffffff;font-size:16px;line-height:1.6;font-style:italic;">"${signal}"</p>
+        <td style="padding:4px 0 0 0;">
+          <table width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td style="background:linear-gradient(135deg,#4f46e5 0%,#7c3aed 100%);border-radius:10px;padding:24px 28px;">
+                <p style="margin:0 0 6px 0;color:rgba(255,255,255,0.65);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Today's signal</p>
+                <p style="margin:0;color:#ffffff;font-size:16px;line-height:1.65;font-style:italic;">"${signal}"</p>
+              </td>
+            </tr>
+          </table>
         </td>
-      </tr>
-    </table>` : "";
+      </tr>` : "";
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -165,29 +181,40 @@ function parseToHtml(text) {
   <table width="100%" cellpadding="0" cellspacing="0" style="background:#f3f4f6;padding:40px 16px;">
     <tr><td align="center">
       <table width="620" cellpadding="0" cellspacing="0">
+
+        <!-- Header -->
         <tr>
-          <td style="background:linear-gradient(135deg,#4f46e5 0%,#7c3aed 100%);border-radius:12px 12px 0 0;padding:40px 40px 36px;">
-            <p style="margin:0 0 6px;color:rgba(255,255,255,0.65);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;">Daily Trends Digest</p>
-            <h1 style="margin:0 0 8px;color:#ffffff;font-size:32px;font-weight:800;line-height:1.1;">Design & Tech Radar</h1>
-            <p style="margin:0;color:rgba(255,255,255,0.75);font-size:15px;">${today}</p>
+          <td style="background:linear-gradient(135deg,#4f46e5 0%,#7c3aed 100%);border-radius:12px 12px 0 0;padding:36px 40px 32px;">
+            <p style="margin:0 0 6px;color:rgba(255,255,255,0.65);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;">Daily Trends Digest</p>
+            <h1 style="margin:0 0 8px;color:#ffffff;font-size:30px;font-weight:800;line-height:1.1;">Design & Tech Radar</h1>
+            <p style="margin:0;color:rgba(255,255,255,0.75);font-size:14px;">${today}</p>
           </td>
         </tr>
+
+        <!-- Intro -->
         <tr>
-          <td style="background:#eef2ff;padding:14px 40px;">
+          <td style="background:#eef2ff;padding:12px 40px;">
             <p style="margin:0;color:#4338ca;font-size:14px;">5 trends across UX/UI, Product Design, AI & Design Tools — curated by your AI agent.</p>
           </td>
         </tr>
+
+        <!-- Trends -->
         <tr>
-          <td style="background:#ffffff;padding:36px 40px 28px;">
-            ${trendsHtml}
-            ${signalHtml}
+          <td style="background:#f3f4f6;padding:28px 28px 8px;">
+            <table width="100%" cellpadding="0" cellspacing="0">
+              ${trendsHtml}
+              ${signalHtml}
+            </table>
           </td>
         </tr>
+
+        <!-- Footer -->
         <tr>
           <td style="background:#f9fafb;border-radius:0 0 12px 12px;padding:20px 40px;border-top:1px solid #e5e7eb;">
-            <p style="margin:0;color:#9ca3af;font-size:13px;text-align:center;">Generated by your personal AI trends agent · Powered by Claude</p>
+            <p style="margin:0;color:#9ca3af;font-size:12px;text-align:center;">Generated by your personal AI trends agent · Powered by Claude</p>
           </td>
         </tr>
+
       </table>
     </td></tr>
   </table>
@@ -198,9 +225,7 @@ function parseToHtml(text) {
 // ─── Step 3: Send via Resend ───────────────────────────────────────────────────
 async function sendEmail(htmlContent, plainText) {
   const today = new Date().toLocaleDateString("en-GB", {
-    weekday: "long",
-    month: "long",
-    day: "numeric",
+    weekday: "long", month: "long", day: "numeric",
   });
 
   const result = await post(
@@ -223,10 +248,8 @@ async function sendEmail(htmlContent, plainText) {
 (async () => {
   console.log("Fetching today's trends from Claude...");
   const rawText = await fetchTrends();
-  console.log("Trends generated successfully");
-  console.log("--- RAW OUTPUT ---");
+  console.log("Raw output from Claude:");
   console.log(rawText);
-  console.log("--- END RAW OUTPUT ---");
 
   console.log("Sending email via Resend...");
   const html = parseToHtml(rawText);
