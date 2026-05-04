@@ -42,35 +42,26 @@ async function fetchTrends() {
     weekday: "long", year: "numeric", month: "long", day: "numeric",
   });
 
-  const prompt = `Today is ${today}.
+  const prompt = `Today is ${today}. You are a design and technology researcher.
 
-You are a senior design and technology researcher. Search the web and find the 5 most notable trends or developments from the past 48 hours across these areas:
-- UX & UI design
-- Product design
-- AI & new technology
-- Design tools (especially Figma and similar)
+Search the web and find 5 notable trends from the past 48 hours in UX/UI design, product design, AI, or design tools like Figma.
 
-Respond using EXACTLY this format for each trend, with no extra symbols, asterisks, or hashtags:
+Write your response as a JSON array. Return ONLY the JSON, no other text before or after it.
 
----TREND---
-TITLE: Write the trend title here
-CATEGORY: UX/UI Design
-WHY_IT_MATTERS: Write 2-3 sentences here explaining significance for designers and product teams.
-WHATS_HAPPENING: Write a full paragraph here with all the key details, context, and what changed or was announced.
-SOURCE_NAME: Name of the publication or website
-SOURCE_URL: https://full-url-here.com
----END---
+Use this exact structure:
+[
+  {
+    "title": "Trend title here",
+    "category": "Design Tools",
+    "why_it_matters": "2-3 sentences on why this matters for designers and product teams.",
+    "whats_happening": "A full paragraph describing what happened, what was announced, and the key context.",
+    "source_name": "Publication or website name",
+    "source_url": "https://full-url.com"
+  }
+]
 
-Repeat this block 5 times, once per trend.
-
-Then at the very end write:
-SIGNAL: One sentence summarising the overarching theme across today's trends.
-
-Important rules:
-- CATEGORY must be one of: UX/UI Design, Product Design, AI & Tech, Design Tools
-- Do not use any markdown, asterisks, hashtags, or bullet points anywhere
-- Fill in ALL fields completely, especially WHATS_HAPPENING — never leave it short
-- SOURCE_URL must be a full working URL starting with https://`;
+Category must be one of: UX/UI Design, Product Design, AI & Tech, Design Tools
+Return valid JSON only. No markdown, no backticks, no explanation.`;
 
   const response = await post(
     "api.anthropic.com",
@@ -89,21 +80,20 @@ Important rules:
 
   const textBlock = response.content?.find((block) => block.type === "text");
   if (!textBlock) throw new Error("No text response from Claude");
-  return textBlock.text;
+
+  console.log("Raw Claude output:");
+  console.log(textBlock.text);
+
+  // Strip markdown code fences if present
+  const cleaned = textBlock.text.replace(/```json|```/g, "").trim();
+  return JSON.parse(cleaned);
 }
 
-// ─── Step 2: Parse into HTML ───────────────────────────────────────────────────
-function parseToHtml(text) {
+// ─── Step 2: Build HTML email from JSON ───────────────────────────────────────
+function buildHtml(trends) {
   const today = new Date().toLocaleDateString("en-GB", {
     weekday: "long", year: "numeric", month: "long", day: "numeric",
   });
-
-  // Extract trend blocks
-  const trendBlocks = [...text.matchAll(/---TREND---([\s\S]*?)---END---/g)];
-
-  // Extract signal
-  const signalMatch = text.match(/SIGNAL:\s*(.+)/);
-  const signal = signalMatch ? signalMatch[1].trim() : "";
 
   const categoryColors = {
     "UX/UI Design": "#4f46e5",
@@ -112,45 +102,29 @@ function parseToHtml(text) {
     "Design Tools": "#059669",
   };
 
-  const getField = (block, field) => {
-    const match = block.match(new RegExp(`${field}:\\s*([\\s\\S]*?)(?=\\n[A-Z_]+:|$)`));
-    return match ? match[1].trim() : "";
-  };
-
-  let trendsHtml = "";
-
-  trendBlocks.forEach((match, index) => {
-    const block = match[1];
-    const title = getField(block, "TITLE");
-    const category = getField(block, "CATEGORY");
-    const whyItMatters = getField(block, "WHY_IT_MATTERS");
-    const whatsHappening = getField(block, "WHATS_HAPPENING");
-    const sourceName = getField(block, "SOURCE_NAME");
-    const sourceUrl = getField(block, "SOURCE_URL");
-
-    const tagColor = categoryColors[category] || "#4f46e5";
-
-    trendsHtml += `
+  const trendsHtml = trends.map((trend, index) => {
+    const color = categoryColors[trend.category] || "#4f46e5";
+    return `
       <tr>
-        <td style="padding:0 0 28px 0;">
+        <td style="padding:0 0 24px 0;">
           <table width="100%" cellpadding="0" cellspacing="0">
             <tr>
-              <td style="background:#ffffff;border:1px solid #e5e7eb;border-left:4px solid ${tagColor};border-radius:8px;padding:24px 28px;">
+              <td style="background:#ffffff;border:1px solid #e5e7eb;border-left:4px solid ${color};border-radius:8px;padding:24px 28px;">
 
                 <p style="margin:0 0 12px 0;">
-                  <span style="background:${tagColor};color:#ffffff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:3px 10px;border-radius:20px;">${category}</span>
+                  <span style="background:${color};color:#ffffff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:3px 10px;border-radius:20px;">${trend.category}</span>
                 </p>
 
-                <h2 style="margin:0 0 18px 0;color:#111827;font-size:19px;font-weight:700;line-height:1.4;">${index + 1}. ${title}</h2>
+                <h2 style="margin:0 0 20px 0;color:#111827;font-size:18px;font-weight:700;line-height:1.4;">${index + 1}. ${trend.title}</h2>
 
                 <p style="margin:0 0 4px 0;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#9ca3af;">Why it matters</p>
-                <p style="margin:0 0 18px 0;color:#374151;font-size:15px;line-height:1.75;">${whyItMatters}</p>
+                <p style="margin:0 0 18px 0;color:#374151;font-size:15px;line-height:1.75;">${trend.why_it_matters}</p>
 
                 <p style="margin:0 0 4px 0;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#9ca3af;">What's happening</p>
-                <p style="margin:0 0 18px 0;color:#374151;font-size:15px;line-height:1.75;">${whatsHappening}</p>
+                <p style="margin:0 0 18px 0;color:#374151;font-size:15px;line-height:1.75;">${trend.whats_happening}</p>
 
                 <p style="margin:0;font-size:13px;color:#6b7280;">
-                  Source: <a href="${sourceUrl}" style="color:${tagColor};text-decoration:underline;">${sourceName}</a>
+                  Source: <a href="${trend.source_url}" style="color:${color};text-decoration:underline;">${trend.source_name}</a>
                 </p>
 
               </td>
@@ -158,21 +132,7 @@ function parseToHtml(text) {
           </table>
         </td>
       </tr>`;
-  });
-
-  const signalHtml = signal ? `
-      <tr>
-        <td style="padding:4px 0 0 0;">
-          <table width="100%" cellpadding="0" cellspacing="0">
-            <tr>
-              <td style="background:linear-gradient(135deg,#4f46e5 0%,#7c3aed 100%);border-radius:10px;padding:24px 28px;">
-                <p style="margin:0 0 6px 0;color:rgba(255,255,255,0.65);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Today's signal</p>
-                <p style="margin:0;color:#ffffff;font-size:16px;line-height:1.65;font-style:italic;">"${signal}"</p>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>` : "";
+  }).join("");
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -200,10 +160,9 @@ function parseToHtml(text) {
 
         <!-- Trends -->
         <tr>
-          <td style="background:#f3f4f6;padding:28px 28px 8px;">
+          <td style="background:#f3f4f6;padding:24px 24px 4px;">
             <table width="100%" cellpadding="0" cellspacing="0">
               ${trendsHtml}
-              ${signalHtml}
             </table>
           </td>
         </tr>
@@ -223,10 +182,15 @@ function parseToHtml(text) {
 }
 
 // ─── Step 3: Send via Resend ───────────────────────────────────────────────────
-async function sendEmail(htmlContent, plainText) {
+async function sendEmail(htmlContent, trends) {
   const today = new Date().toLocaleDateString("en-GB", {
     weekday: "long", month: "long", day: "numeric",
   });
+
+  // Plain text fallback
+  const plainText = trends.map((t, i) =>
+    `${i + 1}. ${t.title}\n${t.category}\n\nWhy it matters: ${t.why_it_matters}\n\nWhat's happening: ${t.whats_happening}\n\nSource: ${t.source_name} - ${t.source_url}`
+  ).join("\n\n---\n\n");
 
   const result = await post(
     "api.resend.com",
@@ -247,13 +211,12 @@ async function sendEmail(htmlContent, plainText) {
 // ─── Main ──────────────────────────────────────────────────────────────────────
 (async () => {
   console.log("Fetching today's trends from Claude...");
-  const rawText = await fetchTrends();
-  console.log("Raw output from Claude:");
-  console.log(rawText);
+  const trends = await fetchTrends();
+  console.log(`Parsed ${trends.length} trends successfully`);
 
   console.log("Sending email via Resend...");
-  const html = parseToHtml(rawText);
-  const result = await sendEmail(html, rawText);
+  const html = buildHtml(trends);
+  const result = await sendEmail(html, trends);
 
   if (result.id) {
     console.log(`Email sent! ID: ${result.id}`);
