@@ -2,11 +2,11 @@ name: Daily Trends Email
 
 on:
   schedule:
-    - cron: '0 8 * * 1-5'   # 8am UTC, Monday–Friday (9am CET winter / 10am CET summer)
-  workflow_dispatch:          # manual trigger for testing
+    - cron: '0 8 * * 1,3,5'  # 8am UTC, Monday, Wednesday, Friday
+  workflow_dispatch:           # manual trigger for testing
 
 permissions:
-  contents: write             # needed to push trends.json to the portfolio repo
+  contents: write
 
 jobs:
   send-trends:
