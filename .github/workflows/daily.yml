@@ -2,8 +2,11 @@ name: Daily Trends Email
 
 on:
   schedule:
-    - cron: '0 8 * * 1-5'   # 8am UTC, Monday–Friday (adjust to your timezone)
-  workflow_dispatch:          # lets you trigger it manually from GitHub for testing
+    - cron: '0 8 * * 1-5'   # 8am UTC, Monday–Friday (9am CET winter / 10am CET summer)
+  workflow_dispatch:          # manual trigger for testing
+
+permissions:
+  contents: write             # needed to push trends.json to the portfolio repo
 
 jobs:
   send-trends:
@@ -16,7 +19,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
 
       - name: Run trends agent
         run: node generate-trends.js
@@ -24,3 +27,4 @@ jobs:
           ANTHROPIC_KEY: ${{ secrets.ANTHROPIC_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           TO_EMAIL: ${{ secrets.TO_EMAIL }}
+          GH_PAT: ${{ secrets.GH_PAT }}
