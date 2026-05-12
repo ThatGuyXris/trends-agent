@@ -5,6 +5,9 @@ const ANTHROPIC_KEY = process.env.ANTHROPIC_KEY;
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const TO_EMAIL = process.env.TO_EMAIL;
 const FROM_EMAIL = "trends@resend.dev";
+const GH_PAT = process.env.GH_PAT;
+const PORTFOLIO_REPO = "ThatGuyXris/christopher-teves.github.io";
+const TRENDS_FILE_PATH = "public/trends.json";
 
 // ─── Helper: HTTPS POST ────────────────────────────────────────────────────────
 function post(hostname, path, headers, body) {
@@ -36,6 +39,55 @@ function post(hostname, path, headers, body) {
   });
 }
 
+// ─── Helper: HTTPS GET ────────────────────────────────────────────────────────
+function get(hostname, path, headers) {
+  return new Promise((resolve, reject) => {
+    const req = https.request(
+      { hostname, path, method: "GET", headers },
+      (res) => {
+        let raw = "";
+        res.on("data", (chunk) => (raw += chunk));
+        res.on("end", () => {
+          try { resolve(JSON.parse(raw)); }
+          catch { resolve(raw); }
+        });
+      }
+    );
+    req.on("error", reject);
+    req.end();
+  });
+}
+
+// ─── Helper: HTTPS PUT ────────────────────────────────────────────────────────
+function put(hostname, path, headers, body) {
+  return new Promise((resolve, reject) => {
+    const data = JSON.stringify(body);
+    const req = https.request(
+      {
+        hostname,
+        path,
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          "Content-Length": Buffer.byteLength(data),
+          ...headers,
+        },
+      },
+      (res) => {
+        let raw = "";
+        res.on("data", (chunk) => (raw += chunk));
+        res.on("end", () => {
+          try { resolve(JSON.parse(raw)); }
+          catch { resolve(raw); }
+        });
+      }
+    );
+    req.on("error", reject);
+    req.write(data);
+    req.end();
+  });
+}
+
 // ─── Step 1: Call Claude with web search ──────────────────────────────────────
 async function fetchTrends() {
   const today = new Date().toLocaleDateString("en-GB", {
@@ -46,9 +98,8 @@ async function fetchTrends() {
 
 Search the web and find 5 notable trends from the past 48 hours in UX/UI design, product design, AI, or design tools like Figma.
 
-Write your response as a JSON array. Return ONLY the JSON, no other text before or after it.
+Respond using ONLY a valid JSON array. No markdown, no backticks, no explanation before or after.
 
-Use this exact structure:
 [
   {
     "title": "Trend title here",
@@ -56,12 +107,13 @@ Use this exact structure:
     "why_it_matters": "2-3 sentences on why this matters for designers and product teams.",
     "whats_happening": "A full paragraph describing what happened, what was announced, and the key context.",
     "source_name": "Publication or website name",
-    "source_url": "https://full-url.com"
+    "source_url": "https://full-url.com",
+    "date": "${new Date().toISOString().split('T')[0]}"
   }
 ]
 
 Category must be one of: UX/UI Design, Product Design, AI & Tech, Design Tools
-Return valid JSON only. No markdown, no backticks, no explanation.`;
+Return valid JSON only.`;
 
   const response = await post(
     "api.anthropic.com",
@@ -81,52 +133,90 @@ Return valid JSON only. No markdown, no backticks, no explanation.`;
   const textBlock = response.content?.find((block) => block.type === "text");
   if (!textBlock) throw new Error("No text response from Claude");
 
-  console.log("Raw Claude output:");
-  console.log(textBlock.text);
-
-  // Strip markdown code fences if present
   const cleaned = textBlock.text.replace(/```json|```/g, "").trim();
   return JSON.parse(cleaned);
 }
 
-// ─── Step 2: Build HTML email from JSON ───────────────────────────────────────
+// ─── Step 2: Push trends.json to portfolio repo via GitHub API ────────────────
+async function pushTrendsToPortfolio(trends) {
+  const ghHeaders = {
+    "Authorization": `Bearer ${GH_PAT}`,
+    "Accept": "application/vnd.github+json",
+    "User-Agent": "trends-agent",
+    "X-GitHub-Api-Version": "2022-11-28",
+  };
+
+  // Get current file SHA (needed to update an existing file)
+  let sha = undefined;
+  try {
+    const existing = await get(
+      "api.github.com",
+      `/repos/${PORTFOLIO_REPO}/contents/${TRENDS_FILE_PATH}`,
+      ghHeaders
+    );
+    sha = existing.sha;
+    console.log("Existing trends.json found, will update it");
+  } catch {
+    console.log("No existing trends.json, will create it");
+  }
+
+  const content = Buffer.from(JSON.stringify(trends, null, 2)).toString("base64");
+  const today = new Date().toLocaleDateString("en-GB", {
+    weekday: "long", month: "long", day: "numeric",
+  });
+
+  const payload = {
+    message: `trends: update for ${today}`,
+    content,
+    ...(sha && { sha }),
+  };
+
+  const result = await put(
+    "api.github.com",
+    `/repos/${PORTFOLIO_REPO}/contents/${TRENDS_FILE_PATH}`,
+    ghHeaders,
+    payload
+  );
+
+  if (result.content) {
+    console.log("trends.json pushed to portfolio successfully");
+  } else {
+    console.error("Failed to push trends.json:", JSON.stringify(result, null, 2));
+    throw new Error("GitHub push failed");
+  }
+}
+
+// ─── Step 3: Build HTML email ─────────────────────────────────────────────────
 function buildHtml(trends) {
   const today = new Date().toLocaleDateString("en-GB", {
     weekday: "long", year: "numeric", month: "long", day: "numeric",
   });
 
   const categoryColors = {
-    "UX/UI Design": "#4f46e5",
-    "Product Design": "#7c3aed",
-    "AI & Tech": "#0891b2",
-    "Design Tools": "#059669",
+    "UX/UI Design":   "#585947",
+    "Product Design": "#7A7B68",
+    "AI & Tech":      "#D4A657",
+    "Design Tools":   "#AAAB9A",
   };
 
   const trendsHtml = trends.map((trend, index) => {
-    const color = categoryColors[trend.category] || "#4f46e5";
+    const color = categoryColors[trend.category] || "#7A7B68";
     return `
       <tr>
         <td style="padding:0 0 24px 0;">
           <table width="100%" cellpadding="0" cellspacing="0">
             <tr>
-              <td style="background:#ffffff;border:1px solid #e5e7eb;border-left:4px solid ${color};border-radius:8px;padding:24px 28px;">
-
-                <p style="margin:0 0 12px 0;">
-                  <span style="background:${color};color:#ffffff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:3px 10px;border-radius:20px;">${trend.category}</span>
+              <td style="background:#F8F7F5;border:1px solid #D4CFBE;border-left:4px solid ${color};padding:28px 32px;">
+                <p style="margin:0 0 10px 0;display:flex;justify-content:space-between;">
+                  <span style="font-family:Inter,sans-serif;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:${color};">${trend.category}</span>
+                  <span style="font-family:Inter,sans-serif;font-size:10px;font-weight:500;color:#AAAB9A;letter-spacing:1px;">0${index + 1}</span>
                 </p>
-
-                <h2 style="margin:0 0 20px 0;color:#111827;font-size:18px;font-weight:700;line-height:1.4;">${index + 1}. ${trend.title}</h2>
-
-                <p style="margin:0 0 4px 0;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#9ca3af;">Why it matters</p>
-                <p style="margin:0 0 18px 0;color:#374151;font-size:15px;line-height:1.75;">${trend.why_it_matters}</p>
-
-                <p style="margin:0 0 4px 0;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#9ca3af;">What's happening</p>
-                <p style="margin:0 0 18px 0;color:#374151;font-size:15px;line-height:1.75;">${trend.whats_happening}</p>
-
-                <p style="margin:0;font-size:13px;color:#6b7280;">
-                  Source: <a href="${trend.source_url}" style="color:${color};text-decoration:underline;">${trend.source_name}</a>
-                </p>
-
+                <h2 style="margin:0 0 22px 0;font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:400;color:#7A7B68;line-height:1.3;">${trend.title}</h2>
+                <p style="margin:0 0 4px 0;font-family:Inter,sans-serif;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:#AAAB9A;">Why it matters</p>
+                <p style="margin:0 0 18px 0;font-family:Inter,sans-serif;font-size:14px;color:#7A7B68;line-height:1.7;">${trend.why_it_matters}</p>
+                <p style="margin:0 0 4px 0;font-family:Inter,sans-serif;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:#AAAB9A;">What's happening</p>
+                <p style="margin:0 0 20px 0;font-family:Inter,sans-serif;font-size:14px;color:#7A7B68;line-height:1.7;">${trend.whats_happening}</p>
+                <a href="${trend.source_url}" style="font-family:Inter,sans-serif;font-size:13px;color:#585947;text-decoration:underline;">${trend.source_name} ↗</a>
               </td>
             </tr>
           </table>
@@ -137,31 +227,30 @@ function buildHtml(trends) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
-<body style="margin:0;padding:0;background:#f3f4f6;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f3f4f6;padding:40px 16px;">
+<body style="margin:0;padding:0;background:#E8E5DB;font-family:Inter,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#E8E5DB;padding:40px 16px;">
     <tr><td align="center">
       <table width="620" cellpadding="0" cellspacing="0">
 
         <!-- Header -->
         <tr>
-          <td style="background:linear-gradient(135deg,#4f46e5 0%,#7c3aed 100%);border-radius:12px 12px 0 0;padding:36px 40px 32px;">
-            <p style="margin:0 0 6px;color:rgba(255,255,255,0.65);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;">Christopher Teves</p>
-            <h1 style="margin:0 0 8px;color:#ffffff;font-size:30px;font-weight:800;line-height:1.1;">Design & Tech Radar</h1>
-            <p style="margin:4px 0 0;color:rgba(255,255,255,0.55);font-size:13px;font-weight:400;">Your daily briefing on UX, Product & AI trends</p>
-            <p style="margin:0;color:rgba(255,255,255,0.75);font-size:14px;">${today}</p>
+          <td style="background:#7A7B68;padding:40px 40px 36px;">
+            <p style="margin:0 0 8px;font-family:Inter,sans-serif;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:#AAAB9A;">Christopher Teves</p>
+            <h1 style="margin:0 0 10px;font-family:'Lilita One','Space Grotesk',sans-serif;font-size:36px;font-weight:400;color:#EFEDE8;line-height:0.96;letter-spacing:-2px;">Design & Tech Radar</h1>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;color:#AAAB9A;">${today}</p>
           </td>
         </tr>
 
-        <!-- Intro -->
+        <!-- Intro bar -->
         <tr>
-          <td style="background:#eef2ff;padding:12px 40px;">
-            <p style="margin:0;color:#4338ca;font-size:14px;">5 trends across UX/UI, Product Design, AI & Design Tools — curated by your AI agent.</p>
+          <td style="background:#585947;padding:12px 40px;">
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;color:#DDDDD7;">5 trends across UX/UI, Product Design, AI & Design Tools</p>
           </td>
         </tr>
 
         <!-- Trends -->
         <tr>
-          <td style="background:#f3f4f6;padding:24px 24px 4px;">
+          <td style="background:#E8E5DB;padding:28px 24px 4px;">
             <table width="100%" cellpadding="0" cellspacing="0">
               ${trendsHtml}
             </table>
@@ -170,8 +259,8 @@ function buildHtml(trends) {
 
         <!-- Footer -->
         <tr>
-          <td style="background:#f9fafb;border-radius:0 0 12px 12px;padding:20px 40px;border-top:1px solid #e5e7eb;">
-            <p style="margin:0;color:#9ca3af;font-size:12px;text-align:center;">Generated by your personal AI trends agent · Powered by Claude</p>
+          <td style="background:#EFEDE8;padding:20px 40px;border-top:1px solid #D4CFBE;">
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:12px;color:#AAAB9A;text-align:center;">Generated by your personal AI trends agent · Powered by Claude</p>
           </td>
         </tr>
 
@@ -182,15 +271,14 @@ function buildHtml(trends) {
 </html>`;
 }
 
-// ─── Step 3: Send via Resend ───────────────────────────────────────────────────
+// ─── Step 4: Send via Resend ───────────────────────────────────────────────────
 async function sendEmail(htmlContent, trends) {
   const today = new Date().toLocaleDateString("en-GB", {
     weekday: "long", month: "long", day: "numeric",
   });
 
-  // Plain text fallback
   const plainText = trends.map((t, i) =>
-    `${i + 1}. ${t.title}\n${t.category}\n\nWhy it matters: ${t.why_it_matters}\n\nWhat's happening: ${t.whats_happening}\n\nSource: ${t.source_name} - ${t.source_url}`
+    `${i + 1}. ${t.title}\n${t.category}\n\nWhy it matters: ${t.why_it_matters}\n\nWhat's happening: ${t.whats_happening}\n\nSource: ${t.source_name} — ${t.source_url}`
   ).join("\n\n---\n\n");
 
   const result = await post(
@@ -214,6 +302,9 @@ async function sendEmail(htmlContent, trends) {
   console.log("Fetching today's trends from Claude...");
   const trends = await fetchTrends();
   console.log(`Parsed ${trends.length} trends successfully`);
+
+  console.log("Pushing trends.json to portfolio repo...");
+  await pushTrendsToPortfolio(trends);
 
   console.log("Sending email via Resend...");
   const html = buildHtml(trends);
