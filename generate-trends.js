@@ -8,6 +8,8 @@ const FROM_EMAIL = "trends@resend.dev";
 const GH_PAT = process.env.GH_PAT;
 const PORTFOLIO_REPO = "ThatGuyXris/christopher-teves.github.io";
 const TRENDS_FILE_PATH = "public/trends.json";
+const AGENT_REPO = "ThatGuyXris/trends-agent";
+const HISTORY_FILE_PATH = "sent-history.json";
 
 // ─── Helper: HTTPS POST ────────────────────────────────────────────────────────
 function post(hostname, path, headers, body) {
@@ -88,31 +90,98 @@ function put(hostname, path, headers, body) {
   });
 }
 
-// ─── Step 1: Call Claude with web search ──────────────────────────────────────
-async function fetchTrends() {
+const ghHeaders = {
+  "Authorization": `Bearer ${GH_PAT}`,
+  "Accept": "application/vnd.github+json",
+  "User-Agent": "trends-agent",
+  "X-GitHub-Api-Version": "2022-11-28",
+};
+
+// ─── Step 1: Read sent history ─────────────────────────────────────────────────
+async function readHistory() {
+  try {
+    const result = await get(
+      "api.github.com",
+      `/repos/${AGENT_REPO}/contents/${HISTORY_FILE_PATH}`,
+      ghHeaders
+    );
+    const decoded = Buffer.from(result.content, "base64").toString("utf-8");
+    const history = JSON.parse(decoded);
+    console.log(`Loaded history: ${history.length} past stories`);
+    return { history, sha: result.sha };
+  } catch {
+    console.log("No history file yet — starting fresh");
+    return { history: [], sha: undefined };
+  }
+}
+
+// ─── Step 2: Save updated history ─────────────────────────────────────────────
+async function saveHistory(history, sha) {
+  // Keep only the last 90 entries to avoid the file growing indefinitely
+  const trimmed = history.slice(-90);
+  const content = Buffer.from(JSON.stringify(trimmed, null, 2)).toString("base64");
+  const today = new Date().toLocaleDateString("en-GB", {
+    weekday: "long", month: "long", day: "numeric",
+  });
+
+  const result = await put(
+    "api.github.com",
+    `/repos/${AGENT_REPO}/contents/${HISTORY_FILE_PATH}`,
+    ghHeaders,
+    {
+      message: `history: update for ${today}`,
+      content,
+      ...(sha && { sha }),
+    }
+  );
+
+  if (result.content) {
+    console.log("History saved successfully");
+  } else {
+    console.error("Failed to save history:", JSON.stringify(result, null, 2));
+  }
+}
+
+// ─── Step 3: Fetch trends from Claude ─────────────────────────────────────────
+async function fetchTrends(history) {
   const today = new Date().toLocaleDateString("en-GB", {
     weekday: "long", year: "numeric", month: "long", day: "numeric",
   });
 
-  const prompt = `Today is ${today}. You are a design and technology researcher.
+  // Build the avoid list from history
+  const avoidList = history.length > 0
+    ? `\n\nIMPORTANT: Do NOT cover any of these stories that have already been sent:\n${history.map(h => `- ${h.title} (${h.url})`).join("\n")}\n\nFind completely fresh stories not on this list.`
+    : "";
 
-Search the web and find 5 notable trends from the past 48 hours in UX/UI design, product design, AI, or design tools like Figma.
+  const prompt = `Today is ${today}. You are a design and technology researcher curating a digest for a UX/UI designer working in tech.
+
+Search the web and find 5 notable trends or developments from the past 48 hours.
+
+Cover a broad mix from these areas, always keeping UX/UI design, Product Design, and AI as the core — but also drawing from:
+- Design tools (Figma, Framer, Adobe, etc.)
+- General technology & startups
+- Business & product strategy
+- Creative & visual culture
+- Web development & engineering
+- Sustainability & future of work
+
+Aim for variety — no more than 2 stories from the same category.${avoidList}
 
 Respond using ONLY a valid JSON array. No markdown, no backticks, no explanation before or after.
 
 [
   {
     "title": "Trend title here",
-    "category": "Design Tools",
+    "category": "UX/UI Design",
     "why_it_matters": "2-3 sentences on why this matters for designers and product teams.",
     "whats_happening": "A full paragraph describing what happened, what was announced, and the key context.",
     "source_name": "Publication or website name",
     "source_url": "https://full-url.com",
-    "date": "${new Date().toISOString().split('T')[0]}"
+    "date": "${new Date().toISOString().split("T")[0]}"
   }
 ]
 
-Category must be one of: UX/UI Design, Product Design, AI & Tech, Design Tools
+Category must be one of: UX/UI Design, Product Design, AI & Tech, Design Tools, Technology, Business & Strategy, Creative Culture, Web Development, Sustainability
 Return valid JSON only.`;
 
   const response = await post(
@@ -137,16 +206,8 @@ Return valid JSON only.`;
   return JSON.parse(cleaned);
 }
 
-// ─── Step 2: Push trends.json to portfolio repo via GitHub API ────────────────
+// ─── Step 4: Push trends.json to portfolio repo ───────────────────────────────
 async function pushTrendsToPortfolio(trends) {
-  const ghHeaders = {
-    "Authorization": `Bearer ${GH_PAT}`,
-    "Accept": "application/vnd.github+json",
-    "User-Agent": "trends-agent",
-    "X-GitHub-Api-Version": "2022-11-28",
-  };
-
-  // Get current file SHA (needed to update an existing file)
   let sha = undefined;
   try {
     const existing = await get(
@@ -165,17 +226,15 @@ async function pushTrendsToPortfolio(trends) {
     weekday: "long", month: "long", day: "numeric",
   });
 
-  const payload = {
-    message: `trends: update for ${today}`,
-    content,
-    ...(sha && { sha }),
-  };
-
   const result = await put(
     "api.github.com",
     `/repos/${PORTFOLIO_REPO}/contents/${TRENDS_FILE_PATH}`,
     ghHeaders,
-    payload
+    {
+      message: `trends: update for ${today}`,
+      content,
+      ...(sha && { sha }),
+    }
   );
 
   if (result.content) {
@@ -186,17 +245,22 @@ async function pushTrendsToPortfolio(trends) {
   }
 }
 
-// ─── Step 3: Build HTML email ─────────────────────────────────────────────────
+// ─── Step 5: Build HTML email ─────────────────────────────────────────────────
 function buildHtml(trends) {
   const today = new Date().toLocaleDateString("en-GB", {
     weekday: "long", year: "numeric", month: "long", day: "numeric",
   });
 
   const categoryColors = {
-    "UX/UI Design":   "#585947",
-    "Product Design": "#7A7B68",
-    "AI & Tech":      "#D4A657",
-    "Design Tools":   "#AAAB9A",
+    "UX/UI Design":       "#585947",
+    "Product Design":     "#7A7B68",
+    "AI & Tech":          "#D4A657",
+    "Design Tools":       "#AAAB9A",
+    "Technology":         "#7A7B68",
+    "Business & Strategy":"#585947",
+    "Creative Culture":   "#D4A657",
+    "Web Development":    "#AAAB9A",
+    "Sustainability":     "#585947",
   };
 
   const trendsHtml = trends.map((trend, index) => {
@@ -207,9 +271,9 @@ function buildHtml(trends) {
           <table width="100%" cellpadding="0" cellspacing="0">
             <tr>
               <td style="background:#F8F7F5;border:1px solid #D4CFBE;border-left:4px solid ${color};padding:28px 32px;">
-                <p style="margin:0 0 10px 0;display:flex;justify-content:space-between;">
+                <p style="margin:0 0 10px 0;">
                   <span style="font-family:Inter,sans-serif;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:${color};">${trend.category}</span>
-                  <span style="font-family:Inter,sans-serif;font-size:10px;font-weight:500;color:#AAAB9A;letter-spacing:1px;">0${index + 1}</span>
+                  <span style="font-family:Inter,sans-serif;font-size:10px;font-weight:500;color:#AAAB9A;letter-spacing:1px;float:right;">0${index + 1}</span>
                 </p>
                 <h2 style="margin:0 0 22px 0;font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:400;color:#7A7B68;line-height:1.3;">${trend.title}</h2>
                 <p style="margin:0 0 4px 0;font-family:Inter,sans-serif;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:#AAAB9A;">Why it matters</p>
@@ -231,8 +295,6 @@ function buildHtml(trends) {
   <table width="100%" cellpadding="0" cellspacing="0" style="background:#E8E5DB;padding:40px 16px;">
     <tr><td align="center">
       <table width="620" cellpadding="0" cellspacing="0">
-
-        <!-- Header -->
         <tr>
           <td style="background:#7A7B68;padding:40px 40px 36px;">
             <p style="margin:0 0 8px;font-family:Inter,sans-serif;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:#AAAB9A;">Christopher Teves</p>
@@ -240,15 +302,11 @@ function buildHtml(trends) {
             <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;color:#AAAB9A;">${today}</p>
           </td>
         </tr>
-
-        <!-- Intro bar -->
         <tr>
           <td style="background:#585947;padding:12px 40px;">
-            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;color:#DDDDD7;">5 trends across UX/UI, Product Design, AI & Design Tools</p>
+            <p style="margin:0;font-family:Inter,sans-serif;font-size:13px;color:#DDDDD7;">5 fresh trends across design, tech, business & culture</p>
           </td>
         </tr>
-
-        <!-- Trends -->
         <tr>
           <td style="background:#E8E5DB;padding:28px 24px 4px;">
             <table width="100%" cellpadding="0" cellspacing="0">
@@ -256,14 +314,11 @@ function buildHtml(trends) {
             </table>
           </td>
         </tr>
-
-        <!-- Footer -->
         <tr>
           <td style="background:#EFEDE8;padding:20px 40px;border-top:1px solid #D4CFBE;">
             <p style="margin:0;font-family:Inter,sans-serif;font-size:12px;color:#AAAB9A;text-align:center;">Generated by your personal AI trends agent · Powered by Claude</p>
           </td>
         </tr>
-
       </table>
     </td></tr>
   </table>
@@ -271,7 +326,7 @@ function buildHtml(trends) {
 </html>`;
 }
 
-// ─── Step 4: Send via Resend ───────────────────────────────────────────────────
+// ─── Step 6: Send via Resend ───────────────────────────────────────────────────
 async function sendEmail(htmlContent, trends) {
   const today = new Date().toLocaleDateString("en-GB", {
     weekday: "long", month: "long", day: "numeric",
@@ -299,12 +354,19 @@ async function sendEmail(htmlContent, trends) {
 
 // ─── Main ──────────────────────────────────────────────────────────────────────
 (async () => {
+  console.log("Reading sent history...");
+  const { history, sha: historySha } = await readHistory();
+
   console.log("Fetching today's trends from Claude...");
-  const trends = await fetchTrends();
+  const trends = await fetchTrends(history);
   console.log(`Parsed ${trends.length} trends successfully`);
 
   console.log("Pushing trends.json to portfolio repo...");
   await pushTrendsToPortfolio(trends);
+
+  console.log("Updating sent history...");
+  const newEntries = trends.map(t => ({ title: t.title, url: t.source_url, date: t.date }));
+  await saveHistory([...history, ...newEntries], historySha);
 
   console.log("Sending email via Resend...");
   const html = buildHtml(trends);
