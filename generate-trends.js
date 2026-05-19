@@ -203,7 +203,9 @@ Return valid JSON only.`;
   if (!textBlock) throw new Error("No text response from Claude");
 
   const cleaned = textBlock.text.replace(/```json|```/g, "").trim();
-  return JSON.parse(cleaned);
+  const jsonMatch = cleaned.match(/\[[\s\S]*\]/);
+  if (!jsonMatch) throw new Error("No JSON array found in response");
+  return JSON.parse(jsonMatch[0]);
 }
 
 // ─── Step 4: Push trends.json to portfolio repo ───────────────────────────────
