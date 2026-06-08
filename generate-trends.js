@@ -82,9 +82,9 @@ async function saveHistory(history, sha) {
 
 async function fetchTrends(history) {
   const today = new Date().toLocaleDateString("en-GB", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
-  const recentHistory = history.slice(-30);
+  const recentHistory = history.slice(-20);
   const avoidList = recentHistory.length > 0
-    ? `\n\nIMPORTANT: Do NOT cover any of these recently sent stories:\n${recentHistory.map(h => `- ${h.title} (${h.url})`).join("\n")}\n\nFind completely fresh stories not on this list.`
+    ? `\n\nIMPORTANT: Do NOT cover any of these recently sent stories:\n${recentHistory.map(h => `- ${h.title}`).join("\n")}\n\nFind completely fresh stories not on this list.`
     : "";
 
   const prompt = `Today is ${today}. You are a design and technology researcher curating a digest for a senior UX/UI designer working in tech.
@@ -124,7 +124,7 @@ Return valid JSON only.`;
 
   const response = await post("api.anthropic.com", "/v1/messages", { "x-api-key": ANTHROPIC_KEY, "anthropic-version": "2023-06-01" }, {
     model: "claude-sonnet-4-6",
-    max_tokens: 8000,
+    max_tokens: 4000,
     tools: [{ type: "web_search_20250305", name: "web_search" }],
     messages: [{ role: "user", content: prompt }],
   });
