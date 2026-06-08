@@ -82,8 +82,9 @@ async function saveHistory(history, sha) {
 
 async function fetchTrends(history) {
   const today = new Date().toLocaleDateString("en-GB", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
-  const avoidList = history.length > 0
-    ? `\n\nIMPORTANT: Do NOT cover any of these already sent stories:\n${history.map(h => `- ${h.title} (${h.url})`).join("\n")}\n\nFind completely fresh stories not on this list.`
+  const recentHistory = history.slice(-30);
+  const avoidList = recentHistory.length > 0
+    ? `\n\nIMPORTANT: Do NOT cover any of these recently sent stories:\n${recentHistory.map(h => `- ${h.title} (${h.url})`).join("\n")}\n\nFind completely fresh stories not on this list.`
     : "";
 
   const prompt = `Today is ${today}. You are a design and technology researcher curating a digest for a senior UX/UI designer working in tech.
@@ -123,13 +124,20 @@ Return valid JSON only.`;
 
   const response = await post("api.anthropic.com", "/v1/messages", { "x-api-key": ANTHROPIC_KEY, "anthropic-version": "2023-06-01" }, {
     model: "claude-sonnet-4-6",
-    max_tokens: 4000,
+    max_tokens: 8000,
     tools: [{ type: "web_search_20250305", name: "web_search" }],
     messages: [{ role: "user", content: prompt }],
   });
 
-  const textBlock = response.content?.find((block) => block.type === "text");
-  if (!textBlock) throw new Error("No text response from Claude");
+  const textBlocks = response.content?.filter((block) => block.type === "text") || [];
+  const textBlock = textBlocks.find(b => b.text.includes("[")) || textBlocks[0];
+
+  if (!textBlock) {
+    console.log("Response content types:", response.content?.map(b => b.type));
+    console.log("Full response:", JSON.stringify(response, null, 2));
+    throw new Error("No text response from Claude — see logs above for full response");
+  }
+
   const cleaned = textBlock.text.replace(/```json|```/g, "").trim();
   const jsonMatch = cleaned.match(/\[[\s\S]*\]/);
   if (!jsonMatch) throw new Error("No JSON array found in response");
