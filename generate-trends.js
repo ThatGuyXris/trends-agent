@@ -141,7 +141,23 @@ Return valid JSON only.`;
   const cleaned = textBlock.text.replace(/```json|```/g, "").trim();
   const jsonMatch = cleaned.match(/\[[\s\S]*\]/);
   if (!jsonMatch) throw new Error("No JSON array found in response");
-  return JSON.parse(jsonMatch[0]);
+
+  // Extract just the JSON array, stripping anything before or after
+  let jsonStr = jsonMatch[0];
+
+  // Find the last valid closing bracket to handle trailing content
+  let depth = 0;
+  let endIndex = 0;
+  for (let i = 0; i < jsonStr.length; i++) {
+    if (jsonStr[i] === '[') depth++;
+    if (jsonStr[i] === ']') {
+      depth--;
+      if (depth === 0) { endIndex = i; break; }
+    }
+  }
+  jsonStr = jsonStr.substring(0, endIndex + 1);
+
+  return JSON.parse(jsonStr);
 }
 
 async function pushTrendsToPortfolio(trends) {
