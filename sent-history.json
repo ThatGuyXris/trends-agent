@@ -1,30 +1,5 @@
 [
   {
-    "title": "Figma Make Launches Custom Skills — PRDs to Prototypes in One Command",
-    "url": "https://www.figma.com/release-notes/",
-    "date": "2026-05-11"
-  },
-  {
-    "title": "Anthropic Nears $1 Trillion Valuation as Revenue Hits $30B — Claude Code Is the Engine",
-    "url": "https://venturebeat.com/technology/anthropic-says-it-hit-a-30-billion-revenue-run-rate-after-crazy-80x-growth",
-    "date": "2026-05-08"
-  },
-  {
-    "title": "OpenAI Opens ChatGPT Ads Manager to All US Businesses — Conversational UI Becomes Ad Real Estate",
-    "url": "https://finance.yahoo.com/sectors/technology/articles/openai-solidifies-ad-platform-ambitions-094600326.html",
-    "date": "2026-05-11"
-  },
-  {
-    "title": "Apple's Liquid Glass Rolls Out Across iOS 26 — The Biggest OS Design Shift Since iOS 7",
-    "url": "https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/",
-    "date": "2026-05-12"
-  },
-  {
-    "title": "Google I/O 2026 Countdown: Agentic Coding, Gemini 4, and Android XR Smart Glasses in Focus",
-    "url": "https://www.tomsguide.com/phones/google-pixel-phones/google-i-o-2026-date-time-potential-announcements-and-everything-else-you-need-to-know",
-    "date": "2026-05-11"
-  },
-  {
     "title": "Google I/O 2026 Keynote: Gemini Intelligence Turns Android Into an Agentic OS",
     "url": "https://thenextweb.com/news/google-io-2026-gemini-intelligence-android-xr-glasses",
     "date": "2026-05-19"
@@ -448,5 +423,30 @@
     "title": "The Pragmatic Engineer: Meta's Self-Inflicted Resignation Wave — And Why Grok Bot Could Be the 'OpenClaw Moment' for Managed AI Agents",
     "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-metas-self-inflicted-resignation",
     "date": "2026-08-14"
+  },
+  {
+    "title": "Smashing Magazine: Writing for Billions — Lessons From Global-Scale Content Design Across Dozens of Languages and Time Zones",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-08-13"
+  },
+  {
+    "title": "Smashing Magazine: New EU AI Labelling Rules Explained — Why 'AI Sparkles' Are No Longer Enough for Compliance",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-08-13"
+  },
+  {
+    "title": "Smashing Magazine: NoLoJS — A Practical Playbook for Replacing Common JavaScript Patterns With Pure HTML and CSS",
+    "url": "https://www.smashingmagazine.com/2026/08/how-baseline-can-help-ship-less-javascript/",
+    "date": "2026-08-12"
+  },
+  {
+    "title": "Smashing Magazine: How Booking.com Built Accessibility Research Practices to Include Disabled Users at Scale",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-08-14"
+  },
+  {
+    "title": "Smashing Magazine: Lottie, DOM Events, and Distance-Based Math — Inside the Architecture of a Tactile Web Experience",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-08-11"
   }
 ]
