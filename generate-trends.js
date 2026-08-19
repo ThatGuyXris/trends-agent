@@ -87,40 +87,26 @@ async function fetchTrends(history) {
     ? `\n\nIMPORTANT: Do NOT cover any of these recently sent stories:\n${recentHistory.map(h => `- ${h.title}`).join("\n")}\n\nFind completely fresh stories not on this list.`
     : "";
 
-  const prompt = `Today is ${today}. You are a design and technology researcher curating a digest for a senior UX/UI designer working in tech.
+  const prompt = `Today is ${today}. Search the web for 5 recent design and tech trends from the past 48 hours. Return ONLY a valid JSON array with no other text, explanation, or markdown.
 
-Search the web and find 5 notable trends or developments from the past 48 hours.
+Prioritise these sources: maggieappleton.com, bradfrost.com, smashingmagazine.com, lennysnewsletter.com, pragmaticengineer.com, designsystems.com, dive.club, baseline.is.
 
-PRIORITY SOURCES — always check these first before searching elsewhere:
-- maggieappleton.com (AI interfaces, design patterns, tools for thought)
-- bradfrost.com (design systems, component design, web standards)
-- smashingmagazine.com (UX, accessibility, frontend)
-- lennysnewsletter.com (product strategy, growth, PM thinking)
-- newsletter.pragmaticengineer.com (engineering culture, tech industry)
-- designsystems.com and intodesignsystems.com (design systems)
-- dive.club (design, product, technology)
-- baseline.is (design tools, frontend)
-- ruben.substack.com (AI tools and workflows)
-- creatoreconomy.so (product, creator tools)
+${avoidList}
 
-Also draw from broader sources covering UX/UI design, product design, AI, design tools, web development, business strategy, creative culture, and sustainability. Aim for variety — no more than 2 stories from the same category. Prioritise stories from the priority sources above when available.${avoidList}
-
-Respond using ONLY a valid JSON array. No markdown, no backticks, no explanation before or after.
-
+Return this exact format:
 [
   {
-    "title": "Trend title here",
+    "title": "trend title",
     "category": "UX/UI Design",
-    "why_it_matters": "2-3 sentences on why this matters for designers and product teams.",
-    "whats_happening": "A full paragraph describing what happened, what was announced, and the key context.",
-    "source_name": "Publication or website name",
+    "why_it_matters": "2-3 sentences on significance for designers.",
+    "whats_happening": "Full paragraph with key details and context.",
+    "source_name": "Source name",
     "source_url": "https://full-url.com",
     "date": "${new Date().toISOString().split("T")[0]}"
   }
 ]
 
-Category must be one of: UX/UI Design, Product Design, AI & Tech, Design Tools, Technology, Business & Strategy, Creative Culture, Web Development, Sustainability
-Return valid JSON only.`;
+Category must be one of: UX/UI Design, Product Design, AI & Tech, Design Tools, Technology, Business & Strategy, Creative Culture, Web Development, Sustainability. Return valid JSON only.`;
 
   const response = await post("api.anthropic.com", "/v1/messages", { "x-api-key": ANTHROPIC_KEY, "anthropic-version": "2023-06-01" }, {
     model: "claude-haiku-4-5-20251001",
