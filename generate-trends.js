@@ -109,7 +109,7 @@ Return this exact format:
 Category must be one of: UX/UI Design, Product Design, AI & Tech, Design Tools, Technology, Business & Strategy, Creative Culture, Web Development, Sustainability. Return valid JSON only.`;
 
   const response = await post("api.anthropic.com", "/v1/messages", { "x-api-key": ANTHROPIC_KEY, "anthropic-version": "2023-06-01" }, {
-    model: "claude-haiku-4-5-20251001",
+    model: "claude-sonnet-4-6",
     max_tokens: 4000,
     tools: [{ type: "web_search_20250305", name: "web_search", max_uses: 5 }],
     messages: [{ role: "user", content: prompt }],
