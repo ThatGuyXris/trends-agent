@@ -1,30 +1,5 @@
 [
   {
-    "title": "Google Search Gets Generative UI — Custom Layouts, Mini-Apps and Interactive Simulations Built On the Fly",
-    "url": "https://blog.google/products-and-platforms/products/search/search-io-2026/",
-    "date": "2026-05-20"
-  },
-  {
-    "title": "Brad Frost on Grieving the AI Age — A Framework for Designers Processing a Profession in Flux",
-    "url": "https://bradfrost.com/blog/post/grief-in-the-ai-age/",
-    "date": "2026-05-17"
-  },
-  {
-    "title": "Smashing Magazine: Nine Accessibility Personas to Use Across Every Design Project",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-05-19"
-  },
-  {
-    "title": "Container Queries Are Everywhere — Smashing Publishes the Definitive Guide to Container-Based Typography",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-05-18"
-  },
-  {
-    "title": "Snap CEO to Lenny's Newsletter: 'Software Is No Longer a Moat' — Distribution and Hardware Are the New Defensibility",
-    "url": "https://www.lennysnewsletter.com/p/snapchat-ceo-why-distribution-is",
-    "date": "2026-05-22"
-  },
-  {
     "title": "Smashing Magazine: 'The Prompt Is Not An Interface' — AI Has Sent Us Back to the Command Line",
     "url": "https://www.smashingmagazine.com/",
     "date": "2026-05-21"
@@ -448,5 +423,30 @@
     "title": "Anthropic IPO Filing to List AI Backlash as a Formal Risk Factor — A Watershed Moment for the AI Industry",
     "url": "https://www.cnbc.com/technology/",
     "date": "2026-08-21"
+  },
+  {
+    "title": "Smashing Magazine: The UX Butterfly Effect — Planning for Unintended Consequences in Design",
+    "url": "https://www.smashingmagazine.com",
+    "date": "2026-08-25"
+  },
+  {
+    "title": "Smashing Magazine: State of AI in Design Systems — How Design Systems Are Talking to Machines",
+    "url": "https://www.smashingmagazine.com",
+    "date": "2026-08-24"
+  },
+  {
+    "title": "Maggie Appleton's August 2026 'Now' Page: On GitHub Next, Agent Patterns, and the Unresolvable Labour Problem",
+    "url": "https://maggieappleton.com/now-2026-08",
+    "date": "2026-08-18"
+  },
+  {
+    "title": "The Pragmatic Engineer: New Trend — Engineers Raising Alarm Over Massive Increase in AI-Generated Code Review Load",
+    "url": "https://newsletter.pragmaticengineer.com",
+    "date": "2026-08-26"
+  },
+  {
+    "title": "Maggie Appleton at GitHub Next: 'MCP Is Dead, We're All on Skills Now' — The Post-MCP Agent Interface Shift",
+    "url": "https://maggieappleton.com/now/",
+    "date": "2026-08-26"
   }
 ]
