@@ -1,30 +1,5 @@
 [
   {
-    "title": "Smashing Magazine: 'The Prompt Is Not An Interface' — AI Has Sent Us Back to the Command Line",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-05-21"
-  },
-  {
-    "title": "Brad Frost Launches AI & Design Systems Course With 16+ Hours of Content — Price Rises to $995 on May 26",
-    "url": "https://bradfrost.com/blog/post/big-ai-design-systems-course-updates/",
-    "date": "2026-05-19"
-  },
-  {
-    "title": "Stripe's 'Protodash' Shows How Design-System-Aware AI Prototyping Kills 'Blurple Slop'",
-    "url": "https://www.lennysnewsletter.com/p/this-week-on-how-i-ai-the-internal",
-    "date": "2026-05-04"
-  },
-  {
-    "title": "The Pragmatic Engineer: Forward-Deployed Engineering Heats Up — Vibe Coding and Agentic Engineering Are Merging",
-    "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-forward-deployed-engineering",
-    "date": "2026-05-19"
-  },
-  {
-    "title": "Smashing Magazine: UX Writing in the AI Era — How to Measure Copy Success When Answers Bypass Your Interface",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-05-20"
-  },
-  {
     "title": "CSS Gets Smarter: sibling-index() and sibling-count() Eliminate Staggered Animation Hacks Forever",
     "url": "https://www.smashingmagazine.com/2026/05/mathematical-layouts-sibling-index-sibling-count/",
     "date": "2026-05-21"
@@ -447,6 +422,31 @@
   {
     "title": "Maggie Appleton at GitHub Next: 'MCP Is Dead, We're All on Skills Now' — The Post-MCP Agent Interface Shift",
     "url": "https://maggieappleton.com/now/",
+    "date": "2026-08-26"
+  },
+  {
+    "title": "Smashing Magazine: What Does a Modern HTML Boilerplate Look Like in 2026?",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-08-28"
+  },
+  {
+    "title": "Smashing Magazine: Research Reveals Which Accordion Signifiers Actually Work for Users",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-08-27"
+  },
+  {
+    "title": "Smashing Magazine: A 30/60/90-Day Onboarding Roadmap for UX Researchers Joining New Organisations",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-08-26"
+  },
+  {
+    "title": "The Pragmatic Engineer: AI Skepticism Is No Longer Rational in 2026 — Charity Majors on the New Engineering Reality",
+    "url": "https://newsletter.pragmaticengineer.com/",
+    "date": "2026-08-27"
+  },
+  {
+    "title": "The Pragmatic Engineer: Formal Methods Are Back — How TLA+ and Verification Are Getting a Second Look in the AI Era",
+    "url": "https://newsletter.pragmaticengineer.com/",
     "date": "2026-08-26"
   }
 ]
