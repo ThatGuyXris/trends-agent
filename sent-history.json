@@ -1,30 +1,5 @@
 [
   {
-    "title": "CSS Gets Smarter: sibling-index() and sibling-count() Eliminate Staggered Animation Hacks Forever",
-    "url": "https://www.smashingmagazine.com/2026/05/mathematical-layouts-sibling-index-sibling-count/",
-    "date": "2026-05-21"
-  },
-  {
-    "title": "The Pragmatic Engineer: AI Is Splitting Engineering Teams Into Shippers, Builders, and Coasters — and Codebase Quality Is Quietly Degrading",
-    "url": "https://newsletter.pragmaticengineer.com/p/ai-impact-on-software-engineers-part-2",
-    "date": "2026-05-20"
-  },
-  {
-    "title": "Smashing Magazine: The Four Levels of Customer Understanding — Why What Users Say, Feel, Think, and Do Are All Different Things",
-    "url": "https://www.smashingmagazine.com/2026/05/four-levels-customer-understanding/",
-    "date": "2026-05-22"
-  },
-  {
-    "title": "Maggie Appleton on Chatbot Sycophancy: The Case for Intellectually Challenging AI Companions",
-    "url": "https://maggieappleton.com/ai-enlightenment",
-    "date": "2026-05-25"
-  },
-  {
-    "title": "Lovable Hits $400M ARR With 146 Employees — Vibe Coding's Growth Rewrites the Product Team Playbook",
-    "url": "https://techcrunch.com/2026/03/11/lovable-says-it-added-100m-in-revenue-last-month-alone-with-just-146-employees/",
-    "date": "2026-05-25"
-  },
-  {
     "title": "Maggie Appleton's 'Zero Alignment' Thesis: AI Coding Agents Are a Single-Player Game in a Multiplayer World",
     "url": "https://maggieappleton.com/zero-alignment",
     "date": "2026-05-26"
@@ -448,5 +423,30 @@
     "title": "The Pragmatic Engineer: Formal Methods Are Back — How TLA+ and Verification Are Getting a Second Look in the AI Era",
     "url": "https://newsletter.pragmaticengineer.com/",
     "date": "2026-08-26"
+  },
+  {
+    "title": "Smashing Magazine: Rethinking Data Visualisation — A UX Approach to Dashboards That Actually Drives Decisions",
+    "url": "https://www.smashingmagazine.com/2026/08/rethinking-data-visualisation-ux-approach-dashboards/",
+    "date": "2026-08-26"
+  },
+  {
+    "title": "Smashing Magazine: Autonomous Websites — What Happens When AI Agents Optimise Your Site After Launch",
+    "url": "https://www.smashingmagazine.com/2026/08/autonomous-websites-agents-after-launch/",
+    "date": "2026-08-25"
+  },
+  {
+    "title": "Smashing Magazine: EU Publishes New Guidelines on AI Transparency — What It Means for Designers Building AI-Powered Products",
+    "url": "https://www.smashingmagazine.com/2026/08/eu-guidelines-ai-transparency-design/",
+    "date": "2026-08-29"
+  },
+  {
+    "title": "Smashing Magazine: SMIL Is Back — Animating SVGs Without JavaScript Using the Browser's Built-In Animation Layer",
+    "url": "https://www.smashingmagazine.com/2026/08/smil-animating-svgs-without-javascript/",
+    "date": "2026-08-20"
+  },
+  {
+    "title": "The Pragmatic Engineer: Meta's Equity Retention Crisis — $1M+ Grants Are Failing to Stop Engineer Attrition",
+    "url": "https://newsletter.pragmaticengineer.com/",
+    "date": "2026-08-31"
   }
 ]
