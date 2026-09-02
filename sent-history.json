@@ -1,30 +1,5 @@
 [
   {
-    "title": "Maggie Appleton's 'Zero Alignment' Thesis: AI Coding Agents Are a Single-Player Game in a Multiplayer World",
-    "url": "https://maggieappleton.com/zero-alignment",
-    "date": "2026-05-26"
-  },
-  {
-    "title": "The Pragmatic Engineer: Is AI the Silver Bullet That 'No Silver Bullets' Said Would Never Exist?",
-    "url": "https://newsletter.pragmaticengineer.com/p/revisiting-no-silver-bullets-in-the",
-    "date": "2026-05-26"
-  },
-  {
-    "title": "Smashing Magazine: Why Spinners Fail Agentic AI — Practical Transparency Patterns for the New Wait Time",
-    "url": "https://www.smashingmagazine.com/2026/05/practical-interface-patterns-ai-transparency/",
-    "date": "2026-05-26"
-  },
-  {
-    "title": "Google Stitch Gets a Real-Time Streaming Agent and Multiplayer Editing — a Direct Strike at Figma's Paid Model",
-    "url": "https://www.techtimes.com/articles/316903/20260520/google-stitch-launches-real-time-ai-agent-multiplayer-editing-figma-charges-15-seat.htm",
-    "date": "2026-05-26"
-  },
-  {
-    "title": "Smashing Magazine: New Baseline CSS Colour Features Let You Build Entire Adaptive Palettes From a Single Token",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-05-22"
-  },
-  {
     "title": "Smashing Magazine: Web Sustainability Guidelines Come to Design Systems — Every Component Has a Carbon Cost",
     "url": "https://www.smashingmagazine.com/",
     "date": "2026-05-26"
@@ -448,5 +423,30 @@
     "title": "The Pragmatic Engineer: Meta's Equity Retention Crisis — $1M+ Grants Are Failing to Stop Engineer Attrition",
     "url": "https://newsletter.pragmaticengineer.com/",
     "date": "2026-08-31"
+  },
+  {
+    "title": "Smashing Magazine: Eight Micro Tips for Remarkably Better Web Typography",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-09-01"
+  },
+  {
+    "title": "Smashing Magazine: Why Accessibility Overlays Hurt UX — The Case for Native Solutions",
+    "url": "https://www.smashingmagazine.com/2026/08/why-accessibility-overlays-hurt-ux/",
+    "date": "2026-08-31"
+  },
+  {
+    "title": "Smashing Magazine: Weaponizing the React Flight Protocol — Deserialization Risks in React Server Components",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-09-02"
+  },
+  {
+    "title": "The Pragmatic Engineer: How Software Engineering Is Changing — A $10,000 Essay Challenge",
+    "url": "https://blog.pragmaticengineer.com/how-software-engineering-is-changing-an-essay-challenge/",
+    "date": "2026-09-01"
+  },
+  {
+    "title": "The Pragmatic Engineer: Claude Code Rockets to #1 — AI Tooling Survey Finds 95% Weekly Usage Among Engineers",
+    "url": "https://newsletter.pragmaticengineer.com/p/ai-tooling-2026",
+    "date": "2026-09-02"
   }
 ]
