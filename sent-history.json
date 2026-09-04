@@ -1,30 +1,5 @@
 [
   {
-    "title": "Smashing Magazine: Web Sustainability Guidelines Come to Design Systems — Every Component Has a Carbon Cost",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-05-26"
-  },
-  {
-    "title": "Smashing Magazine: Your Prototype Is Lying to Your Users — And Here's How to Fix It",
-    "url": "https://www.smashingmagazine.com/2026/05/prototype-users-fix-protopie/",
-    "date": "2026-05-25"
-  },
-  {
-    "title": "CSS Multi-Column Gets 2D Flows: New column-wrap and column-height Properties Land in Chrome 145",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-05-27"
-  },
-  {
-    "title": "Google Launches 'Pics' at I/O 2026 — A Workspace-Native AI Design App That Takes Direct Aim at Canva",
-    "url": "https://techcrunch.com/2026/05/19/ai-design-tools-are-the-next-big-battleground-and-google-is-going-all-in-at-io-2026/",
-    "date": "2026-05-20"
-  },
-  {
-    "title": "Maggie Appleton's 'Lodestone' Project: Designing LLM Interfaces That Make You Think Harder, Not Less",
-    "url": "https://maggieappleton.com/now/",
-    "date": "2026-05-27"
-  },
-  {
     "title": "Tokenmaxxing Is Over — Microsoft, Uber, and Meta Pull Back as AI Bills Explode",
     "url": "https://fortune.com/2026/05/28/tokenmaxxing-is-dead-companies-didnt-get-the-roi-from-ai-they-wanted-to-see/",
     "date": "2026-05-28"
@@ -447,6 +422,31 @@
   {
     "title": "The Pragmatic Engineer: Claude Code Rockets to #1 — AI Tooling Survey Finds 95% Weekly Usage Among Engineers",
     "url": "https://newsletter.pragmaticengineer.com/p/ai-tooling-2026",
+    "date": "2026-09-02"
+  },
+  {
+    "title": "LLM-Readable Design Systems: Restructuring Tokens and Documentation for AI Consumption",
+    "url": "https://www.smashingmagazine.com/2026/09/llm-readable-design-systems/",
+    "date": "2026-09-02"
+  },
+  {
+    "title": "The Art of Interviewing Stakeholders: A Practical Guide for Designers",
+    "url": "https://www.smashingmagazine.com/2026/09/art-of-interviewing-stakeholders/",
+    "date": "2026-09-03"
+  },
+  {
+    "title": "The Pulse: Meta Wanted to Reduce Teams by 60% Because of AI — Zuckerberg Reversed Course, But Damage Is Done",
+    "url": "https://blog.pragmaticengineer.com/the-pulse-meta-wanted-to-reduce-teams-by-60-because-of-ai/",
+    "date": "2026-09-03"
+  },
+  {
+    "title": "CTO Walkout Trend: Engineering Leaders Are Quitting High-Status Roles in Growing Numbers",
+    "url": "https://newsletter.pragmaticengineer.com/archive",
+    "date": "2026-09-03"
+  },
+  {
+    "title": "Design Systems Are Becoming Living Infrastructure — Not Just Component Libraries",
+    "url": "https://designsystemscollective.substack.com/p/design-systems-in-2026-from-components",
     "date": "2026-09-02"
   }
 ]
