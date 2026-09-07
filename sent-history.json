@@ -1,30 +1,5 @@
 [
   {
-    "title": "Tokenmaxxing Is Over — Microsoft, Uber, and Meta Pull Back as AI Bills Explode",
-    "url": "https://fortune.com/2026/05/28/tokenmaxxing-is-dead-companies-didnt-get-the-roi-from-ai-they-wanted-to-see/",
-    "date": "2026-05-28"
-  },
-  {
-    "title": "The Pragmatic Engineer: Engineering Leaders Are Quietly Capping AI Agent Spend — ROI Questions Mount",
-    "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-a-trend-of-trying-to-cut",
-    "date": "2026-05-28"
-  },
-  {
-    "title": "Harness Launches AI DLC Insights — Connecting Prompt-to-Production to Kill 'Tokenmaxxing' for Good",
-    "url": "https://www.prnewswire.com/news-releases/harness-launches-two-new-products-to-give-enterprise-engineering-teams-full-visibility-into-roi-of-ai-spend-302784490.html",
-    "date": "2026-05-28"
-  },
-  {
-    "title": "Smashing Magazine: Ahmad Shadeed Makes the Case for CSS Media Query Range Syntax — Clearer, Safer Breakpoints",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-05-28"
-  },
-  {
-    "title": "Smashing Magazine: Designing Stable Interfaces for Streaming Content — Layout Shifts, ARIA, and the Hidden Complexity of AI UIs",
-    "url": "https://www.smashingmagazine.com/2026/05/designing-stable-interfaces-streaming-content/",
-    "date": "2026-05-01"
-  },
-  {
     "title": "shadcn Is Now the Default Design System of the AI Era — And Most Designers Missed It",
     "url": "https://medium.com/design-bootcamp/the-most-important-design-system-in-2026-that-designers-missed-was-built-by-a-developer-d5617753882e",
     "date": "2026-05-30"
@@ -448,5 +423,30 @@
     "title": "Design Systems Are Becoming Living Infrastructure — Not Just Component Libraries",
     "url": "https://designsystemscollective.substack.com/p/design-systems-in-2026-from-components",
     "date": "2026-09-02"
+  },
+  {
+    "title": "UX Research Glossary 2026: Smashing Magazine Publishes Definitive Reference for Research Methods",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-09-07"
+  },
+  {
+    "title": "AI Interaction Atlas: 100+ Patterns for Human-Centred AI Interface Design",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-09-04"
+  },
+  {
+    "title": "Software Engineering at Proprietary Trading Firms: The Pragmatic Engineer's Optiver Deep-Dive",
+    "url": "https://newsletter.pragmaticengineer.com/p/optiver",
+    "date": "2026-09-06"
+  },
+  {
+    "title": "IDEs Are Falling Out of Style — How AI Is Reshaping Core Engineering Tooling",
+    "url": "https://newsletter.pragmaticengineer.com/p/the-pragmatic-engineer-five-years",
+    "date": "2026-09-03"
+  },
+  {
+    "title": "SmashingConf Freiburg 2026 Opens Today: Modern CSS, Design Systems, and AI Take Centre Stage",
+    "url": "https://smashingconf.com/freiburg-2026",
+    "date": "2026-09-07"
   }
 ]
