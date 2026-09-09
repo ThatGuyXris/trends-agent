@@ -1,30 +1,5 @@
 [
   {
-    "title": "shadcn Is Now the Default Design System of the AI Era — And Most Designers Missed It",
-    "url": "https://medium.com/design-bootcamp/the-most-important-design-system-in-2026-that-designers-missed-was-built-by-a-developer-d5617753882e",
-    "date": "2026-05-30"
-  },
-  {
-    "title": "Smashing Magazine: Stéphanie Walter's 'La Carte Blanche' Gives Teams a Six-Question Card to Define Any Project Before It Starts",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-05-29"
-  },
-  {
-    "title": "Canva AI 2.0 Launches the World's First Design-Specific Foundation Model — And Repositions as an Agentic Work Platform",
-    "url": "https://www.canva.com/newsroom/news/canva-create-2026-ai/",
-    "date": "2026-04-16"
-  },
-  {
-    "title": "Brad Frost Coins 'Mouth Coding' — The Case for AI as a Catalyst for Real Human Collaboration",
-    "url": "https://bradfrost.com/blog/post/mouth-coding/",
-    "date": "2026-04-20"
-  },
-  {
-    "title": "Smashing Magazine: Local-First Web Architecture Is Ready for Production — A Practitioner's Honest Assessment",
-    "url": "https://www.smashingmagazine.com/2026/05/architecture-local-first-web-development/",
-    "date": "2026-05-06"
-  },
-  {
     "title": "Smashing Magazine: Mapping Your Organisation's Accessibility Maturity — A Framework for Moving Beyond Compliance",
     "url": "https://www.smashingmagazine.com/",
     "date": "2026-06-01"
@@ -448,5 +423,30 @@
     "title": "SmashingConf Freiburg 2026 Opens Today: Modern CSS, Design Systems, and AI Take Centre Stage",
     "url": "https://smashingconf.com/freiburg-2026",
     "date": "2026-09-07"
+  },
+  {
+    "title": "FigmaLint Plugin Audits Design System Components for AI and Engineering Readiness",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-09-08"
+  },
+  {
+    "title": "Agent UX Is Now a Mainstream Design Concern as AI Agents Near 40% of Enterprise Apps",
+    "url": "https://aiagentstore.ai/ai-agent-news/this-week",
+    "date": "2026-09-09"
+  },
+  {
+    "title": "DESIGN.md Emerges as a Portable Brand-Rules File for AI-Assisted Product Workflows",
+    "url": "https://blog.mean.ceo/design-trends-september-2026/",
+    "date": "2026-09-09"
+  },
+  {
+    "title": "AI in Design 2026 Report: 91% of Designers Now Use AI, Three in Four Use It Daily",
+    "url": "https://stateofaidesign.com/",
+    "date": "2026-09-09"
+  },
+  {
+    "title": "Lenny and Friends Summit 2026 Opens Tomorrow in San Francisco, Focused on the Future of the Product Role",
+    "url": "https://www.lennysnewsletter.com/p/the-lenny-and-friends-summit-is-back",
+    "date": "2026-09-09"
   }
 ]
