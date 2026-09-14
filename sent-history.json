@@ -1,30 +1,5 @@
 [
   {
-    "title": "Figma Launches 'Check Designs' — Automated Design System QA Built Into the Canvas",
-    "url": "https://www.figma.com/release-notes/",
-    "date": "2026-06-04"
-  },
-  {
-    "title": "Smashing Magazine: CSS Subgrid Gets the Definitive Practical Guide — Finally Solving the CMS Layout Problem",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-06-03"
-  },
-  {
-    "title": "Smashing Magazine: CSS contrast-color() Reaches Full Cross-Browser Baseline — And It Could Actually Fix the Web's Contrast Crisis",
-    "url": "https://www.smashingmagazine.com/2026/05/building-self-correcting-color-systems-contrast-color/",
-    "date": "2026-05-28"
-  },
-  {
-    "title": "EU AI Act Transparency Obligations Land in 56 Days — And Most Product Teams Still Aren't Ready",
-    "url": "https://www.kennedyslaw.com/en/thought-leadership/article/2026/the-eu-ai-act-implementation-timeline-understanding-the-next-deadline-for-compliance/",
-    "date": "2026-06-08"
-  },
-  {
-    "title": "Figma Make Enters Production Codebase Beta — The Design-to-Code Gap Officially Collapses",
-    "url": "https://www.figma.com/release-notes/",
-    "date": "2026-05-28"
-  },
-  {
     "title": "Smashing Magazine: Making Your Design System AI-Ready — A Practitioner's Guide to Killing Prototype Drift",
     "url": "https://www.smashingmagazine.com/2026/06/how-make-design-system-ai-ready/",
     "date": "2026-06-03"
@@ -448,5 +423,30 @@
     "title": "Autonomous Websites: AI Agents Continuously Optimise Sites After Launch",
     "url": "https://www.smashingmagazine.com/category/design/",
     "date": "2026-09-11"
+  },
+  {
+    "title": "AI Industry Leaders Call for Development Slowdown in Rare Show of Unity",
+    "url": "https://www.cnbc.com/2026/09/14/sam-altman-ai-slowdown-anthropic-amodei-musk.html",
+    "date": "2026-09-14"
+  },
+  {
+    "title": "Steam Frame VR Headset Imminent: Valve's Standalone Headset Expected to Launch This Week",
+    "url": "https://tech.sportskeeda.com/wearables/news-where-steam-frame-september-13-2026",
+    "date": "2026-09-14"
+  },
+  {
+    "title": "Local-First Web Architecture Is Graduating From Niche to Production Default",
+    "url": "https://www.smashingmagazine.com/2026/05/architecture-local-first-web-development/",
+    "date": "2026-09-14"
+  },
+  {
+    "title": "The Anti-AI Aesthetic: Zine Culture, Grunge, and Deliberate Imperfection Are Dominating Visual Design",
+    "url": "https://www.sessions.edu/notes-on-design/discover-the-hottest-graphic-design-trends/",
+    "date": "2026-09-14"
+  },
+  {
+    "title": "\"Production-Ready\" Is Now a Design Deliverable — and Designers Are Pushing Back",
+    "url": "https://www.smashingmagazine.com/2026/04/production-ready-becomes-design-deliverable-ux/",
+    "date": "2026-09-14"
   }
 ]
