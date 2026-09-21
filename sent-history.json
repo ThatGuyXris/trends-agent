@@ -1,30 +1,5 @@
 [
   {
-    "title": "Smashing Magazine: Cognitive Disability Participants Surface 1.8× More UX Issues Than General Population — New Research Makes the Case for Inclusive Research Panels",
-    "url": "https://www.smashingmagazine.com/2026/06/benefits-cognitive-inclusion-ux-research/",
-    "date": "2026-06-10"
-  },
-  {
-    "title": "Nielsen Norman Group: 'AI Design' Has Forked Into Four Distinct Jobs — And Most Teams Are Conflating All of Them",
-    "url": "https://www.nngroup.com/articles/design-jobs-ai-created/",
-    "date": "2026-06-05"
-  },
-  {
-    "title": "The Pragmatic Engineer: State of the Job Market 2026 Part 2 — AI Labs Overtake Big Tech as Top Employer Destinations, and Frontend Titles Are Disappearing",
-    "url": "https://newsletter.pragmaticengineer.com/p/the-job-market-in-2026-part-2",
-    "date": "2026-06-09"
-  },
-  {
-    "title": "Smashing Magazine: CSS sibling-index() and sibling-count() — One-Line Staggered Animations Without JavaScript Are Finally Here",
-    "url": "https://www.smashingmagazine.com/2026/05/mathematical-layouts-sibling-index-sibling-count/",
-    "date": "2026-05-21"
-  },
-  {
-    "title": "The Pragmatic Engineer: 'Slow Down to Speed Up' — The Counterintuitive Fix for AI-Generated Code Debt Is Becoming Engineering Orthodoxy",
-    "url": "https://newsletter.pragmaticengineer.com/p/ideas-slow-down-to-speed-up-when",
-    "date": "2026-06-02"
-  },
-  {
     "title": "Figma's Official Chrome Extension Turns Any Live Website Into Editable Design Layers",
     "url": "https://noqta.tn/en/news/figma-chrome-extension-web-to-editable-layers-2026",
     "date": "2026-06-11"
@@ -448,5 +423,30 @@
     "title": "OpenAI Announces GPT-5.5 Retirement from Codex and ChatGPT — Teams Must Migrate to GPT-5.6 Sol",
     "url": "https://releasebot.io/updates/openai",
     "date": "2026-09-18"
+  },
+  {
+    "title": "Front-End Checklist Relaunches as a Dual Workflow Tool for Humans and AI Agents",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-09-21"
+  },
+  {
+    "title": "Inside OpenAI's Agentic Software Factory: IDEs Are Declining, CI/CD Is at Breaking Point",
+    "url": "https://newsletter.pragmaticengineer.com/p/openai-software-factory",
+    "date": "2026-09-15"
+  },
+  {
+    "title": "CSS Container Queries Are Broadly Supported But Widely Misused — Smashing Magazine Issues a Correction",
+    "url": "https://www.smashingmagazine.com/2026/09/stop-treating-css-container-queries-traditional-media-queries/",
+    "date": "2026-09-16"
+  },
+  {
+    "title": "Contextual Menus Are Having a Renaissance as Mouse-First Interaction Patterns Return",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-09-14"
+  },
+  {
+    "title": "Agentic Coding Tools Are Tilting Enterprise Tech Budgets Away from SaaS Vendor Licenses",
+    "url": "https://aiagentstore.ai/ai-agent-news/this-week",
+    "date": "2026-09-13"
   }
 ]
