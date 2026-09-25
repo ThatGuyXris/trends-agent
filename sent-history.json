@@ -1,30 +1,5 @@
 [
   {
-    "title": "Snap Launches $2,195 'Specs' AR Glasses at AWE 2026 — Consumer AR Enters a New Design Era",
-    "url": "https://www.cnbc.com/2026/06/16/snap-unveils-2195-specs-ar-glasses-spiegel-bets-on-post-smartphone.html",
-    "date": "2026-06-16"
-  },
-  {
-    "title": "Smashing Magazine: Busting Accessibility Myths — A Practical Playbook for Designers Facing Stakeholder Pushback",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-06-16"
-  },
-  {
-    "title": "WordPress VIP Survey: 60% of US Consumers Say 'AI' in Brand Messaging Is a Turnoff — And 86% Still Verify Original Sources",
-    "url": "https://techcrunch.com/2026/06/16/sixty-percent-of-u-s-consumers-say-ai-in-brand-messaging-is-a-turnoff-survey-finds/",
-    "date": "2026-06-16"
-  },
-  {
-    "title": "Smashing Magazine: Obs.js — A Tiny Library That Adapts Front-End Delivery to Real-World User Conditions",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-06-12"
-  },
-  {
-    "title": "The Pragmatic Engineer: Google's Antigravity 2.0 IDE Redesign Is Drawing Overwhelmingly Negative Feedback — Poor UX, Bugs, and Quota Burn",
-    "url": "https://blog.pragmaticengineer.com/the-pulse-antigravity-2-0-takes-ide-out-of-its-new-ide/",
-    "date": "2026-06-17"
-  },
-  {
     "title": "Smashing Magazine: Why Sharing a Component Library Isn't Enough — Making Design Decisions Reusable Is the Real Fix",
     "url": "https://www.smashingmagazine.com/",
     "date": "2026-08-18"
@@ -448,5 +423,30 @@
     "title": "Smashing Magazine: Intent-Driven UX Is Replacing Menu-and-Click Interfaces as the Web Evolves Beyond Navigation",
     "url": "https://www.smashingmagazine.com/articles/",
     "date": "2026-09-09"
+  },
+  {
+    "title": "Smashing Magazine: Icon Alignment in Multi-Line Lists Gets a CSS Fix",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-09-24"
+  },
+  {
+    "title": "The Pragmatic Engineer: AI Agents Are Triggering an Unexpected CPU Shortage",
+    "url": "https://blog.pragmaticengineer.com/the-pulse-a-new-trend-of-cpu-shortages/",
+    "date": "2026-09-25"
+  },
+  {
+    "title": "The Pragmatic Engineer: Major Tech Companies Slash AI Bills by Switching to Open Models",
+    "url": "https://blog.pragmaticengineer.com/the-pulse-tech-companies-move-to-open-ai-models/",
+    "date": "2026-09-25"
+  },
+  {
+    "title": "Smashing Magazine: Autonomous Websites — AI Agents That Continuously Optimise After Launch",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-09-25"
+  },
+  {
+    "title": "The Pragmatic Engineer: Automated Software Maintenance — Linear and Anthropic Push AI Agents to Fix Bugs Autonomously",
+    "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-tech-companies-move-to",
+    "date": "2026-09-25"
   }
 ]
