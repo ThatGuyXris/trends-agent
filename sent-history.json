@@ -1,30 +1,5 @@
 [
   {
-    "title": "Smashing Magazine: Why Sharing a Component Library Isn't Enough — Making Design Decisions Reusable Is the Real Fix",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-08-18"
-  },
-  {
-    "title": "Smashing Magazine: 'The Eight Pillars of User Research' Gets a Modern Treatment — A Scalable Model for Research Ops in 2026",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-08-17"
-  },
-  {
-    "title": "Figma Expands Agent Skills in the Community — 50+ Shareable Design Workflow Skills Now Available, With Admin Curation Controls",
-    "url": "https://www.figma.com/release-notes/",
-    "date": "2026-08-17"
-  },
-  {
-    "title": "Lenny's Newsletter: OpenAI's Head of Design Ian Silber on Why Human Designers Still Have the Edge — and How to Navigate the AI Era",
-    "url": "https://www.lennysnewsletter.com/p/openais-head-of-design-this-is-the",
-    "date": "2026-08-16"
-  },
-  {
-    "title": "The Pragmatic Engineer: Meta's Self-Inflicted Resignation Wave — And Why Grok Bot Could Be the 'OpenClaw Moment' for Managed AI Agents",
-    "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-metas-self-inflicted-resignation",
-    "date": "2026-08-14"
-  },
-  {
     "title": "Smashing Magazine: Writing for Billions — Lessons From Global-Scale Content Design Across Dozens of Languages and Time Zones",
     "url": "https://www.smashingmagazine.com/",
     "date": "2026-08-13"
@@ -448,5 +423,30 @@
     "title": "The Pragmatic Engineer: Automated Software Maintenance — Linear and Anthropic Push AI Agents to Fix Bugs Autonomously",
     "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-tech-companies-move-to",
     "date": "2026-09-25"
+  },
+  {
+    "title": "Smashing Magazine: Consolidating Multiple Design Systems — Strategies, Risks, and Real-World Examples",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-09-25"
+  },
+  {
+    "title": "Smashing Magazine: How to Build a Business Case for UX — Defining Value, Costs, and ROI",
+    "url": "https://www.smashingmagazine.com/articles/",
+    "date": "2026-09-11"
+  },
+  {
+    "title": "Brad Frost's AI & Design Systems Course Reaches Completion — Price Rises September 30th",
+    "url": "https://bradfrost.com/blog/post/our-ai-design-systems-course-is-complete/",
+    "date": "2026-09-09"
+  },
+  {
+    "title": "Smashing Magazine: Design Systems Are Becoming AI-Ready — Multi-Brand, Multi-Themed, and Agent-Aware",
+    "url": "https://www.smashingmagazine.com/the-smashing-newsletter/smashing-newsletter-issue-574/",
+    "date": "2026-09-01"
+  },
+  {
+    "title": "The Pragmatic Engineer: 'Tokenmaxxing' Emerges as a Dysfunctional AI Productivity Metric at Major Tech Firms",
+    "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-tokenmaxxing-as-a-weird",
+    "date": "2026-04-23"
   }
 ]
