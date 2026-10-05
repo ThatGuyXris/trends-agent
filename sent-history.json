@@ -1,30 +1,5 @@
 [
   {
-    "title": "Smashing Magazine: Jessica Walsh on Why Design Is Not Dead in the Age of AI — A Hopeful Counter-Narrative",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-08-21"
-  },
-  {
-    "title": "Smashing Magazine: UX Writing as the Foundation of Visual Design — Issue #572 Makes the Case for Words-First Design",
-    "url": "https://www.smashingmagazine.com/the-smashing-newsletter/smashing-newsletter-issue-572/",
-    "date": "2026-08-18"
-  },
-  {
-    "title": "Brad Frost Migrates bradfrost.com From WordPress to Eleventy After 19 Years — And Rebuilds It Live Using His Own Design System",
-    "url": "https://bradfrost.com/blog/post/coming-up-for-air/",
-    "date": "2026-07-23"
-  },
-  {
-    "title": "Lenny's Newsletter: How Tech Workers Are Feeling in 2026 — A Workforce Splitting in Two",
-    "url": "https://www.lennysnewsletter.com/archive",
-    "date": "2026-07-21"
-  },
-  {
-    "title": "Anthropic IPO Filing to List AI Backlash as a Formal Risk Factor — A Watershed Moment for the AI Industry",
-    "url": "https://www.cnbc.com/technology/",
-    "date": "2026-08-21"
-  },
-  {
     "title": "Smashing Magazine: The UX Butterfly Effect — Planning for Unintended Consequences in Design",
     "url": "https://www.smashingmagazine.com",
     "date": "2026-08-25"
@@ -448,5 +423,30 @@
     "title": "Forward Deployed Engineering Surges as Google, OpenAI, and Anthropic Race to Embed Engineers Inside Enterprises",
     "url": "https://blog.pragmaticengineer.com/the-pulse-forward-deployed-engineering-heats-up-again/",
     "date": "2026-10-01"
+  },
+  {
+    "title": "The Death of the Button: Smashing Magazine Declares Intent-Driven UI the New Standard",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-10-05"
+  },
+  {
+    "title": "When AI Writes Almost All Code: The Pragmatic Engineer Opens Landmark Essay on Software Engineering's Identity Crisis",
+    "url": "https://newsletter.pragmaticengineer.com/p/when-ai-writes-almost-all-code-what",
+    "date": "2026-10-05"
+  },
+  {
+    "title": "AI Tooling Survey 2026: Claude Code Dominates, 95% of Engineers Now Use AI Weekly",
+    "url": "https://newsletter.pragmaticengineer.com/p/ai-tooling-2026",
+    "date": "2026-10-05"
+  },
+  {
+    "title": "Mobile and Frontend Engineer Roles Are Disappearing Fastest in 2026 Job Market",
+    "url": "https://newsletter.pragmaticengineer.com/p/the-job-market-in-2026-part-2",
+    "date": "2026-10-05"
+  },
+  {
+    "title": "Storybook MCP Brings Design Systems Into the AI Agent Loop — Brad Frost Champions 'DS+AI' as the Antidote to Vibe Coding",
+    "url": "https://bradfrost.com/blog/post/agentic-design-systems-in-2026/",
+    "date": "2026-10-05"
   }
 ]
