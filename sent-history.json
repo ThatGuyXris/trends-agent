@@ -1,30 +1,5 @@
 [
   {
-    "title": "Smashing Magazine: The UX Butterfly Effect — Planning for Unintended Consequences in Design",
-    "url": "https://www.smashingmagazine.com",
-    "date": "2026-08-25"
-  },
-  {
-    "title": "Smashing Magazine: State of AI in Design Systems — How Design Systems Are Talking to Machines",
-    "url": "https://www.smashingmagazine.com",
-    "date": "2026-08-24"
-  },
-  {
-    "title": "Maggie Appleton's August 2026 'Now' Page: On GitHub Next, Agent Patterns, and the Unresolvable Labour Problem",
-    "url": "https://maggieappleton.com/now-2026-08",
-    "date": "2026-08-18"
-  },
-  {
-    "title": "The Pragmatic Engineer: New Trend — Engineers Raising Alarm Over Massive Increase in AI-Generated Code Review Load",
-    "url": "https://newsletter.pragmaticengineer.com",
-    "date": "2026-08-26"
-  },
-  {
-    "title": "Maggie Appleton at GitHub Next: 'MCP Is Dead, We're All on Skills Now' — The Post-MCP Agent Interface Shift",
-    "url": "https://maggieappleton.com/now/",
-    "date": "2026-08-26"
-  },
-  {
     "title": "Smashing Magazine: What Does a Modern HTML Boilerplate Look Like in 2026?",
     "url": "https://www.smashingmagazine.com/",
     "date": "2026-08-28"
@@ -447,6 +422,31 @@
   {
     "title": "Storybook MCP Brings Design Systems Into the AI Agent Loop — Brad Frost Champions 'DS+AI' as the Antidote to Vibe Coding",
     "url": "https://bradfrost.com/blog/post/agentic-design-systems-in-2026/",
+    "date": "2026-10-05"
+  },
+  {
+    "title": "Smashing Magazine: A Practical Guide to Naming UI Components — The Overlooked Foundation of Scalable Design",
+    "url": "https://www.smashingmagazine.com/2026/10/how-name-things/",
+    "date": "2026-10-06"
+  },
+  {
+    "title": "Smashing Magazine: CSS Can Now Detect Element Overlap — Ahmad Shadeed's Anchor Positioning Breakthrough",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-10-06"
+  },
+  {
+    "title": "The Pragmatic Engineer: The State of the Tech Industry in 2026 — Engineering Specialisations Disappear as Teams Shrink",
+    "url": "https://newsletter.pragmaticengineer.com/p/the-state-of-the-tech-industry-in",
+    "date": "2026-10-06"
+  },
+  {
+    "title": "The Pragmatic Engineer: A New CPU Shortage Is Emerging — AI Agents Are Exhausting Compute Beyond GPUs",
+    "url": "https://newsletter.pragmaticengineer.com/p/the-state-of-the-tech-industry-in",
+    "date": "2026-10-06"
+  },
+  {
+    "title": "Smashing Magazine: Build Tools in 2026 — Are Bundlers and Preprocessors Still Necessary?",
+    "url": "https://www.smashingmagazine.com/",
     "date": "2026-10-05"
   }
 ]
