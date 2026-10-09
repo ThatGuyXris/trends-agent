@@ -1,30 +1,5 @@
 [
   {
-    "title": "Smashing Magazine: What Does a Modern HTML Boilerplate Look Like in 2026?",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-08-28"
-  },
-  {
-    "title": "Smashing Magazine: Research Reveals Which Accordion Signifiers Actually Work for Users",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-08-27"
-  },
-  {
-    "title": "Smashing Magazine: A 30/60/90-Day Onboarding Roadmap for UX Researchers Joining New Organisations",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-08-26"
-  },
-  {
-    "title": "The Pragmatic Engineer: AI Skepticism Is No Longer Rational in 2026 — Charity Majors on the New Engineering Reality",
-    "url": "https://newsletter.pragmaticengineer.com/",
-    "date": "2026-08-27"
-  },
-  {
-    "title": "The Pragmatic Engineer: Formal Methods Are Back — How TLA+ and Verification Are Getting a Second Look in the AI Era",
-    "url": "https://newsletter.pragmaticengineer.com/",
-    "date": "2026-08-26"
-  },
-  {
     "title": "Smashing Magazine: Rethinking Data Visualisation — A UX Approach to Dashboards That Actually Drives Decisions",
     "url": "https://www.smashingmagazine.com/2026/08/rethinking-data-visualisation-ux-approach-dashboards/",
     "date": "2026-08-26"
@@ -448,5 +423,30 @@
     "title": "Smashing Magazine: Build Tools in 2026 — Are Bundlers and Preprocessors Still Necessary?",
     "url": "https://www.smashingmagazine.com/",
     "date": "2026-10-05"
+  },
+  {
+    "title": "Smashing Magazine: Sustainable Accessibility — Why Compliance-Only Strategies Are Failing Organisations",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-10-09"
+  },
+  {
+    "title": "Smashing Magazine: Dashboard Design UX Patterns — A Practitioner's Field Guide to Getting Data Interfaces Right",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-10-08"
+  },
+  {
+    "title": "Smashing Magazine: Building Design System Components With an 8-Agent Pipeline — Lessons From Production",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-10-07"
+  },
+  {
+    "title": "The Pragmatic Engineer: Internal 'Vibe-Coding' Platforms Are Going Mainstream at Mid-Sized Tech Companies",
+    "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-new-trend-of-building-internal",
+    "date": "2026-10-08"
+  },
+  {
+    "title": "The Pragmatic Engineer: Firebase's Global iOS Outage Exposes a Critical Gap in Google's Incident Response",
+    "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-firebases-global-outage",
+    "date": "2026-10-08"
   }
 ]
