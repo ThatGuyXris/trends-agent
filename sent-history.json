@@ -1,30 +1,5 @@
 [
   {
-    "title": "Smashing Magazine: Rethinking Data Visualisation — A UX Approach to Dashboards That Actually Drives Decisions",
-    "url": "https://www.smashingmagazine.com/2026/08/rethinking-data-visualisation-ux-approach-dashboards/",
-    "date": "2026-08-26"
-  },
-  {
-    "title": "Smashing Magazine: Autonomous Websites — What Happens When AI Agents Optimise Your Site After Launch",
-    "url": "https://www.smashingmagazine.com/2026/08/autonomous-websites-agents-after-launch/",
-    "date": "2026-08-25"
-  },
-  {
-    "title": "Smashing Magazine: EU Publishes New Guidelines on AI Transparency — What It Means for Designers Building AI-Powered Products",
-    "url": "https://www.smashingmagazine.com/2026/08/eu-guidelines-ai-transparency-design/",
-    "date": "2026-08-29"
-  },
-  {
-    "title": "Smashing Magazine: SMIL Is Back — Animating SVGs Without JavaScript Using the Browser's Built-In Animation Layer",
-    "url": "https://www.smashingmagazine.com/2026/08/smil-animating-svgs-without-javascript/",
-    "date": "2026-08-20"
-  },
-  {
-    "title": "The Pragmatic Engineer: Meta's Equity Retention Crisis — $1M+ Grants Are Failing to Stop Engineer Attrition",
-    "url": "https://newsletter.pragmaticengineer.com/",
-    "date": "2026-08-31"
-  },
-  {
     "title": "Smashing Magazine: Eight Micro Tips for Remarkably Better Web Typography",
     "url": "https://www.smashingmagazine.com/",
     "date": "2026-09-01"
@@ -448,5 +423,30 @@
     "title": "The Pragmatic Engineer: Firebase's Global iOS Outage Exposes a Critical Gap in Google's Incident Response",
     "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-firebases-global-outage",
     "date": "2026-10-08"
+  },
+  {
+    "title": "Dive Club's Design Hiring Deep Dive: What the Job Market Actually Looks Like for Designers Right Now",
+    "url": "https://dive-club.beehiiv.com/",
+    "date": "2026-10-06"
+  },
+  {
+    "title": "Lenny's Newsletter: Tech Workers' Identity Is Splitting in Two — And Designers Are the Most Anxious",
+    "url": "https://www.lennysnewsletter.com/p/how-tech-workers-are-feeling-in-2026",
+    "date": "2026-10-12"
+  },
+  {
+    "title": "The Pragmatic Engineer: Building Resilient Distributed Systems With Sam Newman — A Timely Counterweight to Agent-First Architecture",
+    "url": "https://newsletter.pragmaticengineer.com/archive",
+    "date": "2026-10-07"
+  },
+  {
+    "title": "Nearly 200 Technologists Begin Building an Independent Fork of the U.S. Web Design System",
+    "url": "https://en.wikipedia.org/wiki/U.S._Web_Design_System",
+    "date": "2026-10-12"
+  },
+  {
+    "title": "Maggie Appleton on Design Engineering: Building Personal 'Jigs' With AI Agents as the New Prototyping Primitive",
+    "url": "https://newsletter.pragmaticengineer.com/p/design-engineering-with-maggie-appleton",
+    "date": "2026-10-12"
   }
 ]
