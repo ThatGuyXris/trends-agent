@@ -1,30 +1,5 @@
 [
   {
-    "title": "LLM-Readable Design Systems: Restructuring Tokens and Documentation for AI Consumption",
-    "url": "https://www.smashingmagazine.com/2026/09/llm-readable-design-systems/",
-    "date": "2026-09-02"
-  },
-  {
-    "title": "The Art of Interviewing Stakeholders: A Practical Guide for Designers",
-    "url": "https://www.smashingmagazine.com/2026/09/art-of-interviewing-stakeholders/",
-    "date": "2026-09-03"
-  },
-  {
-    "title": "The Pulse: Meta Wanted to Reduce Teams by 60% Because of AI — Zuckerberg Reversed Course, But Damage Is Done",
-    "url": "https://blog.pragmaticengineer.com/the-pulse-meta-wanted-to-reduce-teams-by-60-because-of-ai/",
-    "date": "2026-09-03"
-  },
-  {
-    "title": "CTO Walkout Trend: Engineering Leaders Are Quitting High-Status Roles in Growing Numbers",
-    "url": "https://newsletter.pragmaticengineer.com/archive",
-    "date": "2026-09-03"
-  },
-  {
-    "title": "Design Systems Are Becoming Living Infrastructure — Not Just Component Libraries",
-    "url": "https://designsystemscollective.substack.com/p/design-systems-in-2026-from-components",
-    "date": "2026-09-02"
-  },
-  {
     "title": "UX Research Glossary 2026: Smashing Magazine Publishes Definitive Reference for Research Methods",
     "url": "https://www.smashingmagazine.com/",
     "date": "2026-09-07"
@@ -448,5 +423,30 @@
     "title": "Lenny's Newsletter: Why Every Company Now Needs to Think and Operate Like a Lab Team — Josh Woodward of Google Labs",
     "url": "https://www.lennysnewsletter.com/p/why-every-company-now-needs-to-think",
     "date": "2026-10-11"
+  },
+  {
+    "title": "Uber's AI Infrastructure Deep Dive: How a Decade of Developer Tooling Made Agentic AI Possible",
+    "url": "https://newsletter.pragmaticengineer.com/p/ubers-ai-infra-from-the-inside",
+    "date": "2026-10-14"
+  },
+  {
+    "title": "The Pulse: OpenAI Engineer Accused of Spying — and AI Fluency Is Now Being Tested Live in Big Tech Interviews",
+    "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-openai-software-engineer",
+    "date": "2026-10-16"
+  },
+  {
+    "title": "Alternative to NPS for Dev Tools: Smashing Magazine Surfaces a Practical UX Measurement Shift",
+    "url": "https://www.smashingmagazine.com/2026/10/alternative-to-nps-for-dev-tools/",
+    "date": "2026-10-12"
+  },
+  {
+    "title": "The Death of the Button: Smashing Magazine Declares Intent-Driven AI Experiences Are Redefining the UX Designer's Role",
+    "url": "https://www.smashingmagazine.com/2026/09/death-of-the-button-best-interface-is-no-interface/",
+    "date": "2026-09-09"
+  },
+  {
+    "title": "2026 AI Design Field Report: Most Designers at Large Companies Are Still Handing Off — Not Shipping to Production",
+    "url": "https://www.dive.club/ideas/2026-ai-design-field-report",
+    "date": "2026-10-16"
   }
 ]
