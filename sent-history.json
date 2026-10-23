@@ -1,30 +1,5 @@
 [
   {
-    "title": "Designing UX for the Deaf and Hard of Hearing: A Practical Guide",
-    "url": "https://www.smashingmagazine.com/articles/",
-    "date": "2026-09-09"
-  },
-  {
-    "title": "The Web Is Moving Beyond Menus and Forms — Intent-Driven UX Is Here",
-    "url": "https://www.smashingmagazine.com/articles/",
-    "date": "2026-09-09"
-  },
-  {
-    "title": "Product Design Psychology: Free Book Examines How UI Mechanics Shape What Designers Ship",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-09-10"
-  },
-  {
-    "title": "Code Reviews Are Becoming Optional as AI Reshapes Engineering Best Practices",
-    "url": "https://newsletter.pragmaticengineer.com/p/the-pragmatic-engineer-five-years",
-    "date": "2026-09-09"
-  },
-  {
-    "title": "Autonomous Websites: AI Agents Continuously Optimise Sites After Launch",
-    "url": "https://www.smashingmagazine.com/category/design/",
-    "date": "2026-09-11"
-  },
-  {
     "title": "AI Industry Leaders Call for Development Slowdown in Rare Show of Unity",
     "url": "https://www.cnbc.com/2026/09/14/sam-altman-ai-slowdown-anthropic-amodei-musk.html",
     "date": "2026-09-14"
@@ -448,5 +423,30 @@
     "title": "Dive Club: How Google Designs for AI at Scale — Rhiannon Bell, VP of UX for Google Search",
     "url": "https://www.dive.club/episodes",
     "date": "2026-10-06"
+  },
+  {
+    "title": "Accessibility and the Changing Internet: Cassidy Williams on Why Inclusion Is Finally Getting Attention",
+    "url": "https://www.smashingmagazine.com/2026/10/accessibility-and-the-internet/",
+    "date": "2026-10-22"
+  },
+  {
+    "title": "Redesigning Complex Navigation: How Intercom Rebuilt Its Information Architecture Around Clarity",
+    "url": "https://www.smashingmagazine.com/2026/10/redesigning-complex-navigation/",
+    "date": "2026-10-21"
+  },
+  {
+    "title": "Anthropic Builds Its Own Version Control System — and Gets Accused of Ripping Off an Open-Source Project",
+    "url": "https://blog.pragmaticengineer.com/the-pulse-anthropic-builds-its-own-source-control-system/",
+    "date": "2026-10-22"
+  },
+  {
+    "title": "The Rise of Internal Vibe-Coding Platforms: Ramp and Stripe Let Non-Engineers Build Their Own Tools",
+    "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-internal-vibe-coding-apps",
+    "date": "2026-10-15"
+  },
+  {
+    "title": "Dive Club's 'Marble Toss': A Fresh Drop on the Future of Design Practice",
+    "url": "https://dive-club.beehiiv.com/",
+    "date": "2026-10-23"
   }
 ]
