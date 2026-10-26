@@ -1,30 +1,5 @@
 [
   {
-    "title": "AI Industry Leaders Call for Development Slowdown in Rare Show of Unity",
-    "url": "https://www.cnbc.com/2026/09/14/sam-altman-ai-slowdown-anthropic-amodei-musk.html",
-    "date": "2026-09-14"
-  },
-  {
-    "title": "Steam Frame VR Headset Imminent: Valve's Standalone Headset Expected to Launch This Week",
-    "url": "https://tech.sportskeeda.com/wearables/news-where-steam-frame-september-13-2026",
-    "date": "2026-09-14"
-  },
-  {
-    "title": "Local-First Web Architecture Is Graduating From Niche to Production Default",
-    "url": "https://www.smashingmagazine.com/2026/05/architecture-local-first-web-development/",
-    "date": "2026-09-14"
-  },
-  {
-    "title": "The Anti-AI Aesthetic: Zine Culture, Grunge, and Deliberate Imperfection Are Dominating Visual Design",
-    "url": "https://www.sessions.edu/notes-on-design/discover-the-hottest-graphic-design-trends/",
-    "date": "2026-09-14"
-  },
-  {
-    "title": "\"Production-Ready\" Is Now a Design Deliverable — and Designers Are Pushing Back",
-    "url": "https://www.smashingmagazine.com/2026/04/production-ready-becomes-design-deliverable-ux/",
-    "date": "2026-09-14"
-  },
-  {
     "title": "Brad Frost's AI & Design Systems Course Reaches Completion — 200 Videos, Agent SKILLS Files Included",
     "url": "https://bradfrost.com/blog/post/our-ai-design-systems-course-is-complete/",
     "date": "2026-09-09"
@@ -448,5 +423,30 @@
     "title": "Dive Club's 'Marble Toss': A Fresh Drop on the Future of Design Practice",
     "url": "https://dive-club.beehiiv.com/",
     "date": "2026-10-23"
+  },
+  {
+    "title": "Smashing Magazine: Accordion Icons — Which Work Best?",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-10-23"
+  },
+  {
+    "title": "The Pragmatic Engineer: Engineering Management Is Being Rewritten — Will Larson on AI, Career Ladders, and the Shifting Role of the EM",
+    "url": "https://newsletter.pragmaticengineer.com/archive",
+    "date": "2026-10-21"
+  },
+  {
+    "title": "Lenny's Newsletter: An 86-Minute Guide to Finding Product-Market Fit — Rob Snyder's PULL Framework",
+    "url": "https://www.lennysnewsletter.com/p/an-86-minute-guide-to-finding-pmf",
+    "date": "2026-10-25"
+  },
+  {
+    "title": "Brad Frost's AI & Design Systems Course Completes — A Signal That DS+AI Is Now a Teachable Discipline",
+    "url": "https://bradfrost.com/blog/",
+    "date": "2026-10-06"
+  },
+  {
+    "title": "The Pragmatic Engineer: Agent-Authored PRs Now Outnumber Human-Authored PRs on GitHub",
+    "url": "https://newsletter.pragmaticengineer.com/p/the-state-of-the-tech-industry-in",
+    "date": "2026-10-06"
   }
 ]
