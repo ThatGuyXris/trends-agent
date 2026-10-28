@@ -1,30 +1,5 @@
 [
   {
-    "title": "Brad Frost's AI & Design Systems Course Reaches Completion — 200 Videos, Agent SKILLS Files Included",
-    "url": "https://bradfrost.com/blog/post/our-ai-design-systems-course-is-complete/",
-    "date": "2026-09-09"
-  },
-  {
-    "title": "Smashing Magazine: Strong UX Ideas No Longer Sell Themselves — Designers Must Now Build the Business Case",
-    "url": "https://www.smashingmagazine.com/articles/",
-    "date": "2026-09-11"
-  },
-  {
-    "title": "Content Designers Are Demanding Earlier Seats at the Product Table",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-09-11"
-  },
-  {
-    "title": "OpenAI's Head of Design Declares 2026 the Best Time in History to Be a Designer",
-    "url": "https://www.lennysnewsletter.com/p/openais-head-of-design-this-is-the",
-    "date": "2026-09-16"
-  },
-  {
-    "title": "Maggie Appleton's 'Zero Alignment' Talk Puts Multi-Agent Collaboration at the Centre of Engineering Design",
-    "url": "https://maggieappleton.com/zero-alignment",
-    "date": "2026-09-16"
-  },
-  {
     "title": "Smashing Magazine: Hidden vs. Disabled UI States — A Practical Decision Framework",
     "url": "https://www.smashingmagazine.com/",
     "date": "2026-09-18"
@@ -448,5 +423,30 @@
     "title": "The Pragmatic Engineer: Agent-Authored PRs Now Outnumber Human-Authored PRs on GitHub",
     "url": "https://newsletter.pragmaticengineer.com/p/the-state-of-the-tech-industry-in",
     "date": "2026-10-06"
+  },
+  {
+    "title": "AI SRE Is Becoming a Real Engineering Role — Not Just a Vendor Buzzword",
+    "url": "https://newsletter.pragmaticengineer.com/p/ai-sre",
+    "date": "2026-10-27"
+  },
+  {
+    "title": "Reddit Built Its Own AI Prototyping Tool — and It's Changing How Designers Work With Real Data",
+    "url": "https://www.lennysnewsletter.com/p/why-reddit-built-its-own-ai-prototyping",
+    "date": "2026-10-26"
+  },
+  {
+    "title": "Smashing Magazine's TARS Framework Gives Product Teams a Single UX Metric for Feature Impact",
+    "url": "https://www.smashingmagazine.com/2026/10/measuring-impact-product-features-tars/",
+    "date": "2026-10-26"
+  },
+  {
+    "title": "AI Personal Agents Go Head-to-Head: Claude Duet, Grok, Dot, and Muse Ranked Across Real Tasks",
+    "url": "https://www.lennysnewsletter.com/p/grok-vs-dot-vs-muse-vs-claude-duet",
+    "date": "2026-10-28"
+  },
+  {
+    "title": "AI Is Forcing a Complete Rethink of Software Security — A Month of Breaches in a Single Day",
+    "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-do-we-need-to-rethink-software",
+    "date": "2026-10-22"
   }
 ]
