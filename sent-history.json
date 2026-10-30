@@ -1,30 +1,5 @@
 [
   {
-    "title": "Smashing Magazine: Hidden vs. Disabled UI States — A Practical Decision Framework",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-09-18"
-  },
-  {
-    "title": "Smashing Magazine: Optical Illusions in Icon Design — A Science-Backed Guide to Visual Balance",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-09-17"
-  },
-  {
-    "title": "Voice AI UX Patterns Are Rapidly Diversifying as AI Unlocks New Interaction Modes",
-    "url": "https://www.smashingmagazine.com/2026/09/voice-ai-ux-patterns/",
-    "date": "2026-09-15"
-  },
-  {
-    "title": "CSS Anchor Positioning Enables Animated Grid Layouts That Reflow Gracefully on Resize",
-    "url": "https://www.smashingmagazine.com/2026/09/animated-grid-anchor-positioning/",
-    "date": "2026-09-16"
-  },
-  {
-    "title": "OpenAI Announces GPT-5.5 Retirement from Codex and ChatGPT — Teams Must Migrate to GPT-5.6 Sol",
-    "url": "https://releasebot.io/updates/openai",
-    "date": "2026-09-18"
-  },
-  {
     "title": "Front-End Checklist Relaunches as a Dual Workflow Tool for Humans and AI Agents",
     "url": "https://www.smashingmagazine.com/",
     "date": "2026-09-21"
@@ -448,5 +423,30 @@
     "title": "AI Is Forcing a Complete Rethink of Software Security — A Month of Breaches in a Single Day",
     "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-do-we-need-to-rethink-software",
     "date": "2026-10-22"
+  },
+  {
+    "title": "Smashing Magazine: 'Shaping Designers and Design Teams' — Jason Mesut's Self-Reflection Framework Goes Mainstream",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-10-28"
+  },
+  {
+    "title": "The Pragmatic Engineer: AI SRE Goes Under the Microscope — Has Any AI Actually Held the Pager Overnight?",
+    "url": "https://newsletter.pragmaticengineer.com/p/ai-sre",
+    "date": "2026-10-27"
+  },
+  {
+    "title": "The Pragmatic Engineer: AI Is Making Long-Avoided Code Migrations Finally Happen — Asana Did It in Two Weeks",
+    "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-we-need-to-talk-about-migrations",
+    "date": "2026-10-22"
+  },
+  {
+    "title": "Lenny's Newsletter: How I AI — Building an iPhone App With Zero Technical Skills",
+    "url": "https://www.lennysnewsletter.com/",
+    "date": "2026-10-29"
+  },
+  {
+    "title": "Smashing Magazine Announces AI 2027 Conference — AI-Ready Design Systems and AI + Figma Take Centre Stage",
+    "url": "https://www.smashingmagazine.com/the-smashing-newsletter/smashing-newsletter-issue-582/",
+    "date": "2026-10-23"
   }
 ]
