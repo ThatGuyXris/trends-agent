@@ -1,30 +1,5 @@
 [
   {
-    "title": "Front-End Checklist Relaunches as a Dual Workflow Tool for Humans and AI Agents",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-09-21"
-  },
-  {
-    "title": "Inside OpenAI's Agentic Software Factory: IDEs Are Declining, CI/CD Is at Breaking Point",
-    "url": "https://newsletter.pragmaticengineer.com/p/openai-software-factory",
-    "date": "2026-09-15"
-  },
-  {
-    "title": "CSS Container Queries Are Broadly Supported But Widely Misused — Smashing Magazine Issues a Correction",
-    "url": "https://www.smashingmagazine.com/2026/09/stop-treating-css-container-queries-traditional-media-queries/",
-    "date": "2026-09-16"
-  },
-  {
-    "title": "Contextual Menus Are Having a Renaissance as Mouse-First Interaction Patterns Return",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-09-14"
-  },
-  {
-    "title": "Agentic Coding Tools Are Tilting Enterprise Tech Budgets Away from SaaS Vendor Licenses",
-    "url": "https://aiagentstore.ai/ai-agent-news/this-week",
-    "date": "2026-09-13"
-  },
-  {
     "title": "Smashing Magazine: Eye-Tracking Research Confirms Online Scanning Behaviours Persist Across Changing Designs",
     "url": "https://www.smashingmagazine.com/",
     "date": "2026-09-23"
@@ -448,5 +423,30 @@
     "title": "Smashing Magazine Announces AI 2027 Conference — AI-Ready Design Systems and AI + Figma Take Centre Stage",
     "url": "https://www.smashingmagazine.com/the-smashing-newsletter/smashing-newsletter-issue-582/",
     "date": "2026-10-23"
+  },
+  {
+    "title": "The Death of the Button: Smashing Magazine on Intent-Driven UI Beyond Clicks and Menus",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-11-02"
+  },
+  {
+    "title": "Smashing Magazine: Rethinking Data Visualisation — A UX Approach to Dashboards That Actually Drive Decisions",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-11-02"
+  },
+  {
+    "title": "The Pragmatic Engineer: The State of the Tech Industry in 2026 — Engineering Specialisations Are Disappearing as Teams Shrink",
+    "url": "https://newsletter.pragmaticengineer.com/p/the-state-of-the-tech-industry-in",
+    "date": "2026-11-02"
+  },
+  {
+    "title": "The Pragmatic Engineer: DHH Declares the End of Coding by Hand at 37signals — Sparking Industry-Wide Debate",
+    "url": "https://blog.pragmaticengineer.com/the-pulse-ror-creator-sparks-new-death-of-coding-by-hand-debate/",
+    "date": "2026-11-01"
+  },
+  {
+    "title": "Lenny's Newsletter: How a 19-Year-Old Intern Built the Growth Engine Behind a $2B AI Company",
+    "url": "https://www.lennysnewsletter.com/p/how-a-19-year-old-intern-built-the",
+    "date": "2026-11-01"
   }
 ]
