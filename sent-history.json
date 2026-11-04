@@ -1,30 +1,5 @@
 [
   {
-    "title": "Smashing Magazine: Eye-Tracking Research Confirms Online Scanning Behaviours Persist Across Changing Designs",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-09-23"
-  },
-  {
-    "title": "Smashing Magazine: A Practical Framework for Designing Intuitive, User-Centred Data Tables",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-09-22"
-  },
-  {
-    "title": "The Pragmatic Engineer: AI Is Generating More Code Than Developers Can Track — Code Review Is Breaking",
-    "url": "https://newsletter.pragmaticengineer.com/",
-    "date": "2026-09-23"
-  },
-  {
-    "title": "The Pragmatic Engineer: Windows Is Losing Ground to Linux Among Developers — AI Era Is Accelerating the Shift",
-    "url": "https://newsletter.pragmaticengineer.com/p/windows-and-ai",
-    "date": "2026-09-23"
-  },
-  {
-    "title": "Smashing Magazine: Intent-Driven UX Is Replacing Menu-and-Click Interfaces as the Web Evolves Beyond Navigation",
-    "url": "https://www.smashingmagazine.com/articles/",
-    "date": "2026-09-09"
-  },
-  {
     "title": "Smashing Magazine: Icon Alignment in Multi-Line Lists Gets a CSS Fix",
     "url": "https://www.smashingmagazine.com/",
     "date": "2026-09-24"
@@ -448,5 +423,30 @@
     "title": "Lenny's Newsletter: How a 19-Year-Old Intern Built the Growth Engine Behind a $2B AI Company",
     "url": "https://www.lennysnewsletter.com/p/how-a-19-year-old-intern-built-the",
     "date": "2026-11-01"
+  },
+  {
+    "title": "How Software Engineering Is Changing: A Tale of Two Eras — The Pragmatic Engineer's Reader Essay Challenge Winner Reveals a Profession Split in Two",
+    "url": "https://newsletter.pragmaticengineer.com/p/how-software-engineering-is-changing",
+    "date": "2026-11-03"
+  },
+  {
+    "title": "Maggie Appleton's New Talk: 'Fortune Telling and Speculative Design' at Granola Design Engineering Night",
+    "url": "https://maggieappleton.com/garden",
+    "date": "2026-11-04"
+  },
+  {
+    "title": "Smashing Magazine: Modern CSS Might Actually Make Your Front-End More Complex — Not Less",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-11-03"
+  },
+  {
+    "title": "CSS random() Function Brings Designed Imperfection to the Web — No JavaScript Required",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-11-03"
+  },
+  {
+    "title": "Brad Frost's 'Laser Storm' Post Signals a New Personal Creative Season After AI & Design Systems Course Completion",
+    "url": "https://bradfrost.com/blog/",
+    "date": "2026-10-06"
   }
 ]
