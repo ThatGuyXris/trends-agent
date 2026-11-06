@@ -1,30 +1,5 @@
 [
   {
-    "title": "Smashing Magazine: Icon Alignment in Multi-Line Lists Gets a CSS Fix",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-09-24"
-  },
-  {
-    "title": "The Pragmatic Engineer: AI Agents Are Triggering an Unexpected CPU Shortage",
-    "url": "https://blog.pragmaticengineer.com/the-pulse-a-new-trend-of-cpu-shortages/",
-    "date": "2026-09-25"
-  },
-  {
-    "title": "The Pragmatic Engineer: Major Tech Companies Slash AI Bills by Switching to Open Models",
-    "url": "https://blog.pragmaticengineer.com/the-pulse-tech-companies-move-to-open-ai-models/",
-    "date": "2026-09-25"
-  },
-  {
-    "title": "Smashing Magazine: Autonomous Websites — AI Agents That Continuously Optimise After Launch",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-09-25"
-  },
-  {
-    "title": "The Pragmatic Engineer: Automated Software Maintenance — Linear and Anthropic Push AI Agents to Fix Bugs Autonomously",
-    "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-tech-companies-move-to",
-    "date": "2026-09-25"
-  },
-  {
     "title": "Smashing Magazine: Consolidating Multiple Design Systems — Strategies, Risks, and Real-World Examples",
     "url": "https://www.smashingmagazine.com/",
     "date": "2026-09-25"
@@ -448,5 +423,30 @@
     "title": "Brad Frost's 'Laser Storm' Post Signals a New Personal Creative Season After AI & Design Systems Course Completion",
     "url": "https://bradfrost.com/blog/",
     "date": "2026-10-06"
+  },
+  {
+    "title": "Smashing Magazine Launches Dedicated Community for In-House UX Practitioners",
+    "url": "https://www.smashingmagazine.com/2026/11/a-new-community-for-in-house-ux-people/",
+    "date": "2026-11-06"
+  },
+  {
+    "title": "Eric Bailey on Accessibility and AI: Making Immersive LLM Chat Experiences More Accessible",
+    "url": "https://www.smashingmagazine.com/2026/11/making-immersive-llm-chat-experiences-more-accessible/",
+    "date": "2026-11-05"
+  },
+  {
+    "title": "The Pragmatic Engineer: 'Slow Down to Speed Up' — Why AI-Generated Code Volume Is Outpacing Human Review",
+    "url": "https://newsletter.pragmaticengineer.com/p/slow-down-to-speed-up",
+    "date": "2026-11-06"
+  },
+  {
+    "title": "Smashing Magazine: Why More Proof Makes B2B Decision-Making Harder — Tackling Decision Paralysis in Complex Sales UX",
+    "url": "https://www.smashingmagazine.com/2026/11/reducing-decision-paralysis-in-b2b/",
+    "date": "2026-11-03"
+  },
+  {
+    "title": "The Pragmatic Engineer: Non-Engineers Are Now Using AI Agent Harnesses — Every Function in Tech Is Changing",
+    "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-ror-creator-sparks-new",
+    "date": "2026-11-06"
   }
 ]
