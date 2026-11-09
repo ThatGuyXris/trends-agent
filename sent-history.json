@@ -1,30 +1,5 @@
 [
   {
-    "title": "Smashing Magazine: Consolidating Multiple Design Systems — Strategies, Risks, and Real-World Examples",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-09-25"
-  },
-  {
-    "title": "Smashing Magazine: How to Build a Business Case for UX — Defining Value, Costs, and ROI",
-    "url": "https://www.smashingmagazine.com/articles/",
-    "date": "2026-09-11"
-  },
-  {
-    "title": "Brad Frost's AI & Design Systems Course Reaches Completion — Price Rises September 30th",
-    "url": "https://bradfrost.com/blog/post/our-ai-design-systems-course-is-complete/",
-    "date": "2026-09-09"
-  },
-  {
-    "title": "Smashing Magazine: Design Systems Are Becoming AI-Ready — Multi-Brand, Multi-Themed, and Agent-Aware",
-    "url": "https://www.smashingmagazine.com/the-smashing-newsletter/smashing-newsletter-issue-574/",
-    "date": "2026-09-01"
-  },
-  {
-    "title": "The Pragmatic Engineer: 'Tokenmaxxing' Emerges as a Dysfunctional AI Productivity Metric at Major Tech Firms",
-    "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-tokenmaxxing-as-a-weird",
-    "date": "2026-04-23"
-  },
-  {
     "title": "37Signals Goes 'Pencils Down' on Human-Written Code — The Pragmatic Engineer Opens Paywall on Its Landmark Essay",
     "url": "https://newsletter.pragmaticengineer.com/p/when-ai-writes-almost-all-code-what",
     "date": "2026-09-30"
@@ -448,5 +423,30 @@
     "title": "The Pragmatic Engineer: Non-Engineers Are Now Using AI Agent Harnesses — Every Function in Tech Is Changing",
     "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-ror-creator-sparks-new",
     "date": "2026-11-06"
+  },
+  {
+    "title": "The Pragmatic Engineer: Scaling Slack and GitHub — Maude Lemaire on Infrastructure Lessons and Keeping Engineering Judgment Human",
+    "url": "https://newsletter.pragmaticengineer.com/p/scaling-slack-and-github-with-maude",
+    "date": "2026-11-06"
+  },
+  {
+    "title": "The Pragmatic Summit 2027 Announced — Gergely Orosz Brings Engineering's Defining Conversations Back to San Francisco",
+    "url": "https://newsletter.pragmaticengineer.com/p/the-pragmatic-summit-2027",
+    "date": "2026-11-06"
+  },
+  {
+    "title": "Lenny's Newsletter Publishes 2026 Holiday Gift Guide — A Curated Window Into the Product Community's Aesthetic and Values",
+    "url": "https://www.lennysnewsletter.com/p/lennys-newsletter-holiday-gift-guide-057",
+    "date": "2026-11-09"
+  },
+  {
+    "title": "Smashing Magazine's Front-End Boilerplates Round-Up Goes Live — A Signal That Starter Kits Are Back in Fashion",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-11-03"
+  },
+  {
+    "title": "Maggie Appleton's 'Gas Town' Essay on Agent Orchestration Patterns Gains Fresh Attention — Reframing Where Human Oversight Belongs",
+    "url": "https://maggieappleton.com/gastown",
+    "date": "2026-11-09"
   }
 ]
