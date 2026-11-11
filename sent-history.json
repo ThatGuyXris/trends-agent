@@ -1,30 +1,5 @@
 [
   {
-    "title": "37Signals Goes 'Pencils Down' on Human-Written Code — The Pragmatic Engineer Opens Paywall on Its Landmark Essay",
-    "url": "https://newsletter.pragmaticengineer.com/p/when-ai-writes-almost-all-code-what",
-    "date": "2026-09-30"
-  },
-  {
-    "title": "Anthropic's Fable Model Alienates Developers With Data Retention and 'Nerf' Policies — Codex Gains Ground",
-    "url": "https://newsletter.pragmaticengineer.com/p/did-anthropics-new-model-just-boost",
-    "date": "2026-09-30"
-  },
-  {
-    "title": "Smashing Magazine: Agentic AI and Figma — How to Restructure Your Design System Files for AI-Driven Output",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-09-28"
-  },
-  {
-    "title": "The Pragmatic Engineer: AI Codebase Quality Crisis — Maintenance Burden Falls on Fewer Engineers Who Still Understand the Code",
-    "url": "https://newsletter.pragmaticengineer.com/p/ai-impact-on-software-engineers-part-2",
-    "date": "2026-09-30"
-  },
-  {
-    "title": "The Pragmatic Engineer: AI Labs Now Beat Big Tech for Developer Talent — Anthropic and OpenAI Are the Most Competitive Hiring Destinations",
-    "url": "https://newsletter.pragmaticengineer.com/p/the-job-market-in-2026-part-2",
-    "date": "2026-09-30"
-  },
-  {
     "title": "Accessibility in AI Chat Is Broken — And Designers Are Finally Tackling It",
     "url": "https://www.smashingmagazine.com/",
     "date": "2026-10-02"
@@ -447,6 +422,31 @@
   {
     "title": "Maggie Appleton's 'Gas Town' Essay on Agent Orchestration Patterns Gains Fresh Attention — Reframing Where Human Oversight Belongs",
     "url": "https://maggieappleton.com/gastown",
+    "date": "2026-11-09"
+  },
+  {
+    "title": "Lenny's Newsletter: State of the Tech Job Market Late 2026 — PMs Are Winning, Designers Are Hurting",
+    "url": "https://www.lennysnewsletter.com/p/state-of-the-tech-job-market-late",
+    "date": "2026-11-10"
+  },
+  {
+    "title": "The Pragmatic Engineer: Software Correctness & Supply Chain Security With Sean Allen — Recentring Fundamentals in the Age of AI-Generated Code",
+    "url": "https://newsletter.pragmaticengineer.com/p/software-correctness",
+    "date": "2026-11-10"
+  },
+  {
+    "title": "Lenny's Newsletter: How a Founder Built a Better Duolingo With Codex — Real-Time Voice AI Is Now a Viable Product Primitive",
+    "url": "https://www.lennysnewsletter.com/p/how-i-ai-how-this-founder-built-a",
+    "date": "2026-11-09"
+  },
+  {
+    "title": "Smashing Magazine: Icons in Web UIs — Lea Verou on Using CSS to Insert and Control Icons Without Touching HTML",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-11-10"
+  },
+  {
+    "title": "Lenny's Newsletter: Claude Fable 5.2 Reviewed — Anthropic's New Frontier Model Turns Tweets Into Animated Videos and Blurry Photos Into Assembly Guides",
+    "url": "https://www.lennysnewsletter.com/p/claude-fable-52-review-fast-creative",
     "date": "2026-11-09"
   }
 ]
