@@ -1,30 +1,5 @@
 [
   {
-    "title": "The Death of the Button: Smashing Magazine Declares Intent-Driven UI the New Standard",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-10-05"
-  },
-  {
-    "title": "When AI Writes Almost All Code: The Pragmatic Engineer Opens Landmark Essay on Software Engineering's Identity Crisis",
-    "url": "https://newsletter.pragmaticengineer.com/p/when-ai-writes-almost-all-code-what",
-    "date": "2026-10-05"
-  },
-  {
-    "title": "AI Tooling Survey 2026: Claude Code Dominates, 95% of Engineers Now Use AI Weekly",
-    "url": "https://newsletter.pragmaticengineer.com/p/ai-tooling-2026",
-    "date": "2026-10-05"
-  },
-  {
-    "title": "Mobile and Frontend Engineer Roles Are Disappearing Fastest in 2026 Job Market",
-    "url": "https://newsletter.pragmaticengineer.com/p/the-job-market-in-2026-part-2",
-    "date": "2026-10-05"
-  },
-  {
-    "title": "Storybook MCP Brings Design Systems Into the AI Agent Loop — Brad Frost Champions 'DS+AI' as the Antidote to Vibe Coding",
-    "url": "https://bradfrost.com/blog/post/agentic-design-systems-in-2026/",
-    "date": "2026-10-05"
-  },
-  {
     "title": "Smashing Magazine: A Practical Guide to Naming UI Components — The Overlooked Foundation of Scalable Design",
     "url": "https://www.smashingmagazine.com/2026/10/how-name-things/",
     "date": "2026-10-06"
@@ -448,5 +423,30 @@
     "title": "The Pragmatic Engineer: incident.io Cuts AI Spend From $4,500 to $1,600 Per Dev Per Month — A Turning Point in AI ROI Discipline",
     "url": "https://blog.pragmaticengineer.com/the-pulse-details-of-incident-ios-ai-spend/",
     "date": "2026-11-12"
+  },
+  {
+    "title": "The Pragmatic Engineer: Satya Nadella on Software Engineering After Code Becomes Cheap",
+    "url": "https://newsletter.pragmaticengineer.com/p/software-engineering-after-code-becomes",
+    "date": "2026-11-16"
+  },
+  {
+    "title": "Lenny's Newsletter: How Claire Vo Built Anti-Fraud Defences Against Token Fraud as a Solo AI Founder",
+    "url": "https://www.lennysnewsletter.com/p/how-i-fight-token-fraud-as-a-solo",
+    "date": "2026-11-16"
+  },
+  {
+    "title": "Lenny's Newsletter: Meta's Muse — Inside the Fastest-Growing Consumer AI Product Ever Built",
+    "url": "https://www.lennysnewsletter.com/p/metas-muse-how-we-launched-the-most",
+    "date": "2026-11-15"
+  },
+  {
+    "title": "Smashing Magazine: Design System Metrics — What to Measure and How to Prove Value to Stakeholders",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-11-13"
+  },
+  {
+    "title": "Smashing Magazine: 'Research Practice' — Gregg Bernstein's Free Book on Mastering Day-to-Day UX Research Goes Live",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-11-16"
   }
 ]
