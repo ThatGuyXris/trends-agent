@@ -1,30 +1,5 @@
 [
   {
-    "title": "Smashing Magazine: Sustainable Accessibility — Why Compliance-Only Strategies Are Failing Organisations",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-10-09"
-  },
-  {
-    "title": "Smashing Magazine: Dashboard Design UX Patterns — A Practitioner's Field Guide to Getting Data Interfaces Right",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-10-08"
-  },
-  {
-    "title": "Smashing Magazine: Building Design System Components With an 8-Agent Pipeline — Lessons From Production",
-    "url": "https://www.smashingmagazine.com/",
-    "date": "2026-10-07"
-  },
-  {
-    "title": "The Pragmatic Engineer: Internal 'Vibe-Coding' Platforms Are Going Mainstream at Mid-Sized Tech Companies",
-    "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-new-trend-of-building-internal",
-    "date": "2026-10-08"
-  },
-  {
-    "title": "The Pragmatic Engineer: Firebase's Global iOS Outage Exposes a Critical Gap in Google's Incident Response",
-    "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-firebases-global-outage",
-    "date": "2026-10-08"
-  },
-  {
     "title": "Dive Club's Design Hiring Deep Dive: What the Job Market Actually Looks Like for Designers Right Now",
     "url": "https://dive-club.beehiiv.com/",
     "date": "2026-10-06"
@@ -448,5 +423,30 @@
     "title": "Smashing Magazine: A New Community for In-House UX People — Filling the Gap Between Solo Practitioners and Agencies",
     "url": "https://www.smashingmagazine.com/articles/",
     "date": "2026-11-06"
+  },
+  {
+    "title": "The Pragmatic Engineer: Software Factories and Human Code Review Is Dead — CodeRabbit CEO on 5,000 PRs a Month",
+    "url": "https://newsletter.pragmaticengineer.com/p/software-factories-and-code-reviews",
+    "date": "2026-11-18"
+  },
+  {
+    "title": "Smashing Magazine: AI Sped Up the Build — How Can Accessibility Testing Keep Up?",
+    "url": "https://www.smashingmagazine.com/2026/11/ai-sped-up-build-how-can-accessibility-testing-keep-up/",
+    "date": "2026-11-17"
+  },
+  {
+    "title": "Smashing Magazine: Open Visualization Academy Launches — Alberto Cairo's Free Platform for Information Design and Data Literacy",
+    "url": "https://www.smashingmagazine.com/",
+    "date": "2026-11-19"
+  },
+  {
+    "title": "Smashing Magazine: Declarative Dragging — A New Approach to Simplifying Drag-and-Drop Interactions on the Web",
+    "url": "https://www.smashingmagazine.com/the-smashing-newsletter/smashing-newsletter-issue-585/",
+    "date": "2026-11-17"
+  },
+  {
+    "title": "The Pragmatic Engineer: Is Amazon's Writing Culture Collapsing Because of AI?",
+    "url": "https://newsletter.pragmaticengineer.com/p/the-pulse-is-amazons-writing-culture",
+    "date": "2026-11-19"
   }
 ]
